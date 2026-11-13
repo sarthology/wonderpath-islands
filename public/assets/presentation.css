@@ -489,3 +489,9 @@
     transition: none;
   }
 }
+
+/* A gentle overview tilt gives the complete island a tangible camera response. */
+.art-frame {
+  transform: translate3d(var(--camera-x, 0px), var(--camera-y, 0px), 0)
+    scale(var(--zoom, 1)) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));
+}

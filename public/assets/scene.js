@@ -214,6 +214,12 @@
       let cameraY =
         centerY +
         clamp(pans[k].y - py * overflowY * 2 * motion, -overflowY, overflowY);
+      // Overview movement must not depend on image overflow: the full island still reacts.
+      const overview = (1 - recenter) * motion;
+      cameraX += px * 32 * overview;
+      cameraY += py * 22 * overview;
+      set(f, '--tilt-x', `${-py * 3 * overview}deg`);
+      set(f, '--tilt-y', `${px * 4 * overview}deg`);
       const blend = reduced ? 1 : 1 - Math.exp(-dt / 85);
       cameras[k].x += (cameraX - cameras[k].x) * blend;
       cameras[k].y += (cameraY - cameras[k].y) * blend;
@@ -422,9 +428,9 @@
       my = 0;
       return;
     }
-    const rect = frames[active].parentElement.getBoundingClientRect();
-    mx = clamp((e.clientX - rect.left) / rect.width - 0.5, -0.5, 0.5);
-    my = clamp((e.clientY - rect.top) / rect.height - 0.5, -0.5, 0.5);
+    // Respond across the whole page, including while the pointer is over the copy.
+    mx = clamp(e.clientX / innerWidth - 0.5, -0.5, 0.5);
+    my = clamp(e.clientY / innerHeight - 0.5, -0.5, 0.5);
   }
   window.addEventListener("pointermove", updatePointer, { passive: true });
   track.tabIndex = 0;

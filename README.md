@@ -69,3 +69,5 @@ New assets: `public/assets/fantasy-sky.png` and `public/assets/foreground-cloud.
 Clouds respond to camera zoom at different depth factors: distant sky expands slightly, atmospheric clouds expand moderately, and foreground clouds expand and shift most strongly. Zooming out reverses the effect.
 
 The overview copy fades out over 360 ms and returns over 420 ms. Artwork and foreground clouds ease between overview and full-page positions over 520 ms; camera transforms remain independent so mouse panning stays live. Reduced-motion mode skips these transitions.
+
+At overview zoom, pointer movement anywhere across the page moves and subtly tilts the complete island. Clouds and rocks retain separate depth motion. This overview effect fades into the existing close-up pan as zoom increases and is disabled by reduced-motion preferences.
