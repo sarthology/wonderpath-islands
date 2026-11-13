@@ -413,3 +413,53 @@
     transform: none !important;
   }
 }
+
+/* Close-up uses the entire panel; the overview copy returns on reset. */
+.panel.is-close .copy {
+  visibility: hidden;
+}
+.panel.is-close .art-stage {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  mask-image: none;
+  mask-composite: add;
+  overflow: hidden;
+}
+.panel.is-close .art-frame {
+  width: var(--overview-width);
+  margin: auto;
+}
+.page.has-zoom .top-label {
+  visibility: hidden;
+}
+.page.has-zoom .atmosphere {
+  background: linear-gradient(0deg, #efd5df55, transparent 28%);
+}
+.distant-horizon {
+  transform: translate3d(var(--horizon-x, 0px), var(--horizon-y, 0px), 0)
+    scale(var(--sky-zoom, 1));
+}
+.cloud {
+  transform: translate3d(var(--cx, 0px), var(--cy, 0px), 0)
+    scale(var(--cloud-zoom, 1));
+}
+.foreground-cloud {
+  transform: translate3d(var(--fx, 0px), var(--fy, 0px), 0)
+    scale(var(--cloud-zoom, 1));
+}
+/* Explicit camera zoom is retained; reduced motion removes ambient drift. */
+@media (prefers-reduced-motion: reduce) {
+  .foreground-cloud {
+    transform: scale(var(--cloud-zoom, 1)) !important;
+  }
+}
+.panel.is-close .panel-grid {
+  display: block;
+  padding: 0;
+}

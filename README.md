@@ -31,7 +31,7 @@ Open http://localhost:3000.
 - Focus the island scene with Tab. Left/Right navigate; Home/End go to the first/last island.
 - Plus/Minus or Up/Down zoom; 0 resets zoom.
 
-Zoom is remembered separately for each island and ranges from 75% to 320%. Close-ups use a softly feathered viewing area beside the copy. Move the pointer to inspect on desktop; use a two-finger drag to pan on touch devices. Reset view returns to 100%. Reduced-motion preferences disable ambient motion and smooth island transitions; changes to the preference take effect while the page is open.
+Zoom is remembered separately for each island and ranges from 75% to 320%. Close-ups hide the sector copy and use the entire viewport. Reset or zoom back out to restore the overview text. Move the pointer to inspect on desktop; use a two-finger drag to pan on touch devices. Reset view returns to 100%. Reduced-motion preferences disable ambient motion and smooth island transitions; changes to the preference take effect while the page is open.
 
 ## GitHub Pages
 
@@ -58,10 +58,12 @@ Imported from the supplied `WonderPath-Project.zip`. The layout stylesheet was e
 
 ## Final presentation
 
-The large repeated Faceted Adventure heading and Island Worlds draft label have been removed. Each island uses its sector title as the heading. The overview keeps the complete island visible. Zooming past 130% opens a close-up with softly feathered edges, allowing details to fill the scene while the copy remains separate. Approved island artwork remains unchanged.
+The large repeated Faceted Adventure heading and Island Worlds draft label have been removed. Each island uses its sector title as the heading. The overview keeps the complete island visible. Zooming past 130% hides the copy and expands the artwork stage to the full viewport, while preserving mouse and two-finger camera panning. Approved island artwork remains unchanged.
 
 ## Cloud depth and fantasy background
 
 The generated fantasy sky fills the viewport. Three atmospheric clouds and two foreground cloud image planes per island move at separate depths; the near clouds cross the island base. The six decorative rocks per island retain independent motion. Foreground clouds do not intercept input. Reduced motion disables ambient cloud and rock movement while retaining zoom and explicit two-finger camera panning.
 
 New assets: `public/assets/fantasy-sky.png` and `public/assets/foreground-cloud.png`. Generated with the built-in imagegen tool; the foreground cloud retains transparency. Generation prompts are in `ASSET-PROMPTS.md`. Approved island artwork remains unchanged.
+
+Clouds respond to camera zoom at different depth factors: distant sky expands slightly, atmospheric clouds expand moderately, and foreground clouds expand and shift most strongly. Zooming out reverses the effect.
