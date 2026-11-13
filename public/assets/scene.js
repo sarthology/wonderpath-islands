@@ -22,7 +22,9 @@
   const note = document.querySelector(".gesture-note");
   const reset = document.createElement("button");
   reset.className = "reset-camera";
-  reset.textContent = "Reset view";
+  reset.setAttribute("aria-label", "Reset view to the full island");
+  reset.title = "Return to overview (0)";
+  reset.innerHTML = `<span class="reset-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 8a8 8 0 1 1-1 8M5 3v5h5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Reset view</span><kbd aria-hidden="true">0</kbd>`;
   reset.addEventListener("click", () => {
     pans[active] = { x: 0, y: 0 };
     setZoom(1);
@@ -70,7 +72,7 @@
     const touch = matchMedia("(pointer:coarse)").matches || innerWidth <= 700;
     note.textContent = close
       ? touch
-        ? "Pinch to zoom · Two fingers to look around"
+        ? "Drag to look around · Pinch to zoom"
         : "Move your pointer to look around · 0 to reset"
       : touch
         ? "Swipe sideways to explore · Swipe up to zoom in"
@@ -218,8 +220,8 @@
       const overview = (1 - recenter) * motion;
       cameraX += px * 32 * overview;
       cameraY += py * 22 * overview;
-      set(f, '--tilt-x', `${-py * 3 * overview}deg`);
-      set(f, '--tilt-y', `${px * 4 * overview}deg`);
+      set(f, "--tilt-x", `${-py * 3 * overview}deg`);
+      set(f, "--tilt-y", `${px * 4 * overview}deg`);
       const blend = reduced ? 1 : 1 - Math.exp(-dt / 85);
       cameras[k].x += (cameraX - cameras[k].x) * blend;
       cameras[k].y += (cameraY - cameras[k].y) * blend;
@@ -339,6 +341,19 @@
   const pointers = new Map();
   let drag = null,
     pinch = null;
+  function beginDrag(point, pan) {
+    drag = {
+      x: point.x,
+      y: point.y,
+      lastY: point.y,
+      scroll: track.scrollLeft,
+      axis: null,
+      pan,
+      panX: pans[active].x,
+      panY: pans[active].y,
+    };
+    track.classList.add("is-dragging");
+  }
   track.addEventListener("pointerdown", (e) => {
     if (e.button > 0) return;
     pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
@@ -356,14 +371,10 @@
       drag = null;
       track.classList.remove("is-dragging");
     } else {
-      drag = {
-        x: e.clientX,
-        y: e.clientY,
-        lastY: e.clientY,
-        scroll: track.scrollLeft,
-        axis: null,
-      };
-      track.classList.add("is-dragging");
+      beginDrag(
+        { x: e.clientX, y: e.clientY },
+        e.pointerType !== "mouse" && zooms[active] > 1.3,
+      );
     }
   });
   track.addEventListener("pointermove", (e) => {
@@ -400,6 +411,22 @@
     } else if (drag) {
       const dx = e.clientX - drag.x,
         dy = e.clientY - drag.y;
+      if (drag.pan) {
+        const f = frames[active],
+          stage = f.parentElement;
+        const ox = Math.max(
+          0,
+          (f.offsetWidth * zooms[active] - stage.clientWidth) / 2 + 32,
+        );
+        const oy = Math.max(
+          0,
+          (f.offsetHeight * zooms[active] - stage.clientHeight) / 2 + 32,
+        );
+        pans[active].x = clamp(drag.panX + dx, -ox, ox);
+        pans[active].y = clamp(drag.panY + dy, -oy, oy);
+        start();
+        return;
+      }
       if (!drag.axis && Math.hypot(dx, dy) > 9)
         drag.axis = Math.abs(dx) > Math.abs(dy) ? "x" : "y";
       if (drag.axis === "x") track.scrollLeft = drag.scroll - dx;
@@ -410,6 +437,10 @@
   function finish(e) {
     if (!pointers.has(e.pointerId)) return;
     pointers.delete(e.pointerId);
+    if (pinch && pointers.size === 1) {
+      pinch = null;
+      beginDrag([...pointers.values()][0], zooms[active] > 1.3);
+    }
     if (!pointers.size) {
       if (drag && drag.axis === "x")
         go(Math.round(track.scrollLeft / track.clientWidth));

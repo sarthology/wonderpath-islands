@@ -493,5 +493,88 @@
 /* A gentle overview tilt gives the complete island a tangible camera response. */
 .art-frame {
   transform: translate3d(var(--camera-x, 0px), var(--camera-y, 0px), 0)
-    scale(var(--zoom, 1)) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));
+    scale(var(--zoom, 1)) rotateX(var(--tilt-x, 0deg))
+    rotateY(var(--tilt-y, 0deg));
+}
+
+/* A tactile, thumb-friendly return control in WonderPath forest and warm gold. */
+.reset-camera {
+  align-items: center;
+  gap: 11px;
+  min-height: 52px;
+  padding: 9px 15px 9px 10px;
+  border: 1px solid #e6d3a3;
+  border-radius: 999px;
+  color: #fff5df;
+  background: linear-gradient(145deg, #345d4c, #183f32);
+  box-shadow:
+    0 8px 25px #183f3233,
+    inset 0 1px 0 #ffffff26;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.035em;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+.page.has-zoom .reset-camera {
+  display: inline-flex;
+}
+.reset-icon {
+  display: grid;
+  place-items: center;
+  width: 31px;
+  height: 31px;
+  border: 1px solid #ddc58a66;
+  border-radius: 50%;
+  background: #f3db9f12;
+  color: #f1dba7;
+}
+.reset-icon svg {
+  width: 19px;
+  height: 19px;
+}
+.reset-camera kbd {
+  margin-left: 5px;
+  padding: 3px 6px;
+  border: 1px solid #fff4d633;
+  border-radius: 5px;
+  color: #eee2bf;
+  font: 10px var(--font-sans);
+}
+.reset-camera:focus-visible {
+  outline: 2px solid #fff6d8;
+  outline-offset: 4px;
+}
+.reset-camera:active {
+  transform: scale(0.96);
+}
+@media (hover: hover) {
+  .reset-camera:hover {
+    transform: translateY(-2px);
+    box-shadow:
+      0 12px 30px #183f3240,
+      inset 0 1px 0 #ffffff26;
+  }
+}
+@media (max-width: 700px) {
+  .reset-camera {
+    bottom: max(54px, calc(env(safe-area-inset-bottom) + 42px));
+    right: 20px;
+    min-height: 52px;
+    padding: 9px 17px 9px 10px;
+  }
+  .reset-camera kbd {
+    display: none;
+  }
+  .page.has-zoom .zoom-readout {
+    bottom: max(116px, calc(env(safe-area-inset-bottom) + 104px));
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .reset-camera {
+    transition: none;
+  }
 }

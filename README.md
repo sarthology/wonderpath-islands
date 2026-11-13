@@ -31,7 +31,7 @@ Open http://localhost:3000.
 - Focus the island scene with Tab. Left/Right navigate; Home/End go to the first/last island.
 - Plus/Minus or Up/Down zoom; 0 resets zoom.
 
-Zoom is remembered separately for each island and ranges from 75% to 320%. Close-ups hide the sector copy and use the entire viewport. Reset or zoom back out to restore the overview text. Move the pointer to inspect on desktop; use a two-finger drag to pan on touch devices. Reset view returns to 100%. Reduced-motion preferences disable ambient motion and smooth island transitions; changes to the preference take effect while the page is open.
+Zoom is remembered separately for each island and ranges from 75% to 320%. Close-ups hide the sector copy and use the entire viewport. Reset or zoom back out to restore the overview text. Move the pointer to inspect on desktop; drag with one finger to pan on touch devices. Pinch to zoom; after lifting one finger, continue panning with the other. Reset view returns to 100%. Reduced-motion preferences disable ambient motion and smooth island transitions; changes to the preference take effect while the page is open.
 
 ## GitHub Pages
 
@@ -62,7 +62,7 @@ The large repeated Faceted Adventure heading and Island Worlds draft label have 
 
 ## Cloud depth and fantasy background
 
-The generated fantasy sky fills the viewport. Three atmospheric clouds and two foreground cloud image planes per island move at separate depths; the near clouds cross the island base. The six decorative rocks per island retain independent motion. Foreground clouds do not intercept input. Reduced motion disables ambient cloud and rock movement while retaining zoom and explicit two-finger camera panning.
+The generated fantasy sky fills the viewport. Three atmospheric clouds and two foreground cloud image planes per island move at separate depths; the near clouds cross the island base. The six decorative rocks per island retain independent motion. Foreground clouds do not intercept input. Reduced motion disables ambient cloud and rock movement while retaining zoom and explicit touch camera panning.
 
 New assets: `public/assets/fantasy-sky.png` and `public/assets/foreground-cloud.png`. Generated with the built-in imagegen tool; the foreground cloud retains transparency. Generation prompts are in `ASSET-PROMPTS.md`. Approved island artwork remains unchanged.
 
@@ -71,3 +71,5 @@ Clouds respond to camera zoom at different depth factors: distant sky expands sl
 The overview copy fades out over 360 ms and returns over 420 ms. Artwork and foreground clouds ease between overview and full-page positions over 520 ms; camera transforms remain independent so mouse panning stays live. Reduced-motion mode skips these transitions.
 
 At overview zoom, pointer movement anywhere across the page moves and subtly tilts the complete island. Clouds and rocks retain separate depth motion. This overview effect fades into the existing close-up pan as zoom increases and is disabled by reduced-motion preferences.
+
+In close-up, one-finger touch or pen dragging pans the image rather than changing islands or zooming. Overview swipes still navigate and zoom. The reset control uses a forest-green and gold pill, an illustrated return icon, a desktop shortcut hint, and a 52px touch target.
