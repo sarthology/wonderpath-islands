@@ -251,3 +251,165 @@
     transform: none !important;
   }
 }
+
+/* The sky fills the viewport; three cloud depths float independently. */
+.distant-horizon {
+  inset: -5%;
+  background-image: url("fantasy-sky.png");
+  background-position: center;
+  background-size: cover;
+  opacity: 1;
+}
+.atmosphere {
+  background:
+    linear-gradient(90deg, #fff3dfb8, #fff0de50 31%, transparent 63%),
+    linear-gradient(0deg, #efd5df99, transparent 45%);
+}
+.mist-soft {
+  height: 48%;
+  opacity: 0.65;
+}
+.cloud-one {
+  width: 23vw;
+  left: 26%;
+  top: 14%;
+  opacity: 0.72;
+}
+.cloud-two {
+  width: 25vw;
+  right: -8%;
+  bottom: 20%;
+  opacity: 0.65;
+}
+.cloud-three {
+  width: 17vw;
+  left: 68%;
+  top: 7%;
+  opacity: 0.45;
+}
+.art-stage {
+  isolation: isolate;
+}
+.foreground-cloud {
+  position: absolute;
+  z-index: 6;
+  width: 43%;
+  height: auto;
+  pointer-events: none;
+  user-select: none;
+  opacity: 0.83;
+  transform: translate3d(var(--fx, 0px), var(--fy, 0px), 0);
+  filter: drop-shadow(0 12px 24px #d49da51a);
+}
+.foreground-cloud-1 {
+  left: 3%;
+  top: 64%;
+}
+.foreground-cloud-2 {
+  width: 35%;
+  right: 0;
+  top: 74%;
+  opacity: 0.65;
+}
+/* Soft edges on the close-up viewport replace the old hard clipping line. */
+.panel.is-close .art-stage {
+  overflow: hidden;
+  mask-image:
+    linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent),
+    linear-gradient(0deg, transparent, #000 7%, #000 94%, transparent);
+  mask-composite: intersect;
+}
+.reset-camera {
+  position: absolute;
+  z-index: 40;
+  right: 4.5vw;
+  bottom: 24px;
+  border: 1px solid #51695c50;
+  border-radius: 30px;
+  padding: 10px 18px;
+  background: #fff6eccc;
+  color: #2d5141;
+  font: 11px var(--font-sans);
+  cursor: pointer;
+  display: none;
+  backdrop-filter: blur(10px);
+}
+.page.has-zoom .reset-camera {
+  display: block;
+}
+.page.has-zoom .zoom-readout {
+  bottom: 72px;
+}
+.page.has-zoom .gesture-note {
+  max-width: 65vw;
+}
+@media (max-width: 950px) {
+  .distant-horizon {
+    background-position: 58% center;
+    opacity: 0.9;
+  }
+  .foreground-cloud-1 {
+    top: 68%;
+    left: 0;
+  }
+  .foreground-cloud-2 {
+    top: 80%;
+    right: -3%;
+  }
+}
+@media (max-width: 700px) {
+  .art-frame {
+    width: min(92%, calc((100dvh - 300px) * 1.15));
+  }
+  .cloud-one {
+    width: 55vw;
+    left: -12%;
+    top: 19%;
+  }
+  .cloud-two {
+    width: 55vw;
+    right: -25%;
+    bottom: 22%;
+  }
+  .foreground-cloud-1 {
+    top: auto;
+    bottom: 22%;
+    width: 43%;
+    left: -4%;
+  }
+  .foreground-cloud-2 {
+    top: auto;
+    bottom: 6%;
+    width: 46%;
+    right: -5%;
+  }
+  .reset-camera {
+    bottom: 50px;
+    right: 24px;
+    padding: 8px 14px;
+  }
+  .page.has-zoom .gesture-note {
+    max-width: none;
+  }
+  .page.has-zoom .zoom-readout {
+    bottom: 96px;
+  }
+}
+@media (max-width: 950px) and (max-height: 500px) and (min-aspect-ratio: 4/3) {
+  .art-frame {
+    width: min(82%, calc((100dvh - 150px) * 1.05));
+  }
+  .foreground-cloud-1 {
+    top: 65%;
+    bottom: auto;
+  }
+  .foreground-cloud-2 {
+    top: 77%;
+    bottom: auto;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .foreground-cloud {
+    transform: none !important;
+  }
+}

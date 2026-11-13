@@ -16,26 +16,30 @@
     hidden = false;
   const zooms = panels.map(() => 1),
     frames = panels.map((p) => p.querySelector(".art-frame"));
-  // Keep the complete island inside its stage, including when zoomed or rotated.
-  let zoomLimits = [];
-  function measureZoomLimits() {
-    zoomLimits = frames.map((f) => {
-      const stage = f.parentElement;
-      return Math.max(
-        1,
-        Math.min(
-          1.7,
-          (stage.clientWidth - 48) / Math.max(1, f.offsetWidth),
-          (stage.clientHeight - 48) / Math.max(1, f.offsetHeight),
-        ),
-      );
-    });
-    zooms.forEach((value, i) => {
-      zooms[i] = clamp(value, 0.75, zoomLimits[i]);
-    });
-    zoom = Math.min(zoom, zoomLimits[active]);
+  const MAX_ZOOM = 3.2;
+  const pans = panels.map(() => ({ x: 0, y: 0 }));
+  const note = document.querySelector(".gesture-note");
+  const reset = document.createElement("button");
+  reset.className = "reset-camera";
+  reset.textContent = "Reset view";
+  reset.addEventListener("click", () => {
+    pans[active] = { x: 0, y: 0 };
+    setZoom(1);
+  });
+  page.append(reset);
+  function updateCameraUI() {
+    const close = zooms[active] > 1.3;
+    page.classList.toggle("has-zoom", close);
+    panels.forEach((p, i) => p.classList.toggle("is-close", zooms[i] > 1.3));
+    const touch = matchMedia("(pointer:coarse)").matches || innerWidth <= 700;
+    note.textContent = close
+      ? touch
+        ? "Pinch to zoom · Two fingers to look around"
+        : "Move your pointer to look around · 0 to reset"
+      : touch
+        ? "Swipe sideways to explore · Swipe up to zoom in"
+        : "Scroll sideways to explore · Scroll up to zoom in";
   }
-  measureZoomLimits();
   // Crop coordinates within the unchanged 1448 × 1086 debris atlas.
   const boxes = [
     [225, 828, 62, 69],
@@ -69,10 +73,24 @@
       };
     }),
   );
+  // Separate cloud planes stay in front of the island, outside its zoom transform.
+  const foreground = panels.map((panel) => {
+    const stage = panel.querySelector(".art-stage");
+    return [0, 1].map((i) => {
+      const cloud = document.createElement("img");
+      cloud.className = `foreground-cloud foreground-cloud-${i + 1}`;
+      cloud.src = "assets/foreground-cloud.png";
+      cloud.alt = "";
+      cloud.draggable = false;
+      cloud.setAttribute("aria-hidden", "true");
+      stage.append(cloud);
+      return cloud;
+    });
+  });
   const third = document.createElement("div");
   third.className = "cloud cloud-three";
   third.setAttribute("aria-hidden", "true");
-  third.innerHTML = '<img src="assets/faceted-cloud-2.svg" alt="">';
+  third.innerHTML = '<img src="assets/foreground-cloud.png" alt="">';
   page.append(third);
   const clouds = [...document.querySelectorAll(".cloud")];
   const set = (e, k, v) => e.style.setProperty(k, v);
@@ -88,6 +106,7 @@
       document.querySelector(".zoom-readout").textContent =
         Math.round(zoom * 100) + "%";
     }
+    updateCameraUI();
     panels.forEach((p, i) =>
       p.classList.toggle("is-near", Math.abs(i - active) < 2),
     );
@@ -136,16 +155,42 @@
         (innerWidth > 950 ? Math.round(64 * z) : Math.round(94 * z)) + "vw";
       if (art.sizes !== size) art.sizes = size;
       set(f, "--zoom", z);
-      set(
-        f,
-        "--camera-x",
-        `${clamp(px * (z > 1 ? (z - 1) * -75 : 4), -10, 10) * motion}px`,
+      const stage = f.parentElement;
+      const overflowX = Math.max(
+        0,
+        (f.offsetWidth * z - stage.clientWidth) / 2 + 32,
       );
-      set(
-        f,
-        "--camera-y",
-        `${clamp(py * (z > 1 ? (z - 1) * -55 : 3), -10, 10) * motion}px`,
+      const overflowY = Math.max(
+        0,
+        (f.offsetHeight * z - stage.clientHeight) / 2 + 32,
       );
+      // Phone overview is bottom-aligned; center the inspection camera as it zooms in.
+      const recenter = clamp((z - 1) / 0.3, 0, 1);
+      const centerX =
+        (stage.clientWidth / 2 - f.offsetLeft - f.offsetWidth / 2) * recenter;
+      const centerY =
+        (stage.clientHeight / 2 - f.offsetTop - f.offsetHeight / 2) * recenter;
+      const cameraX =
+        centerX +
+        clamp(pans[k].x - px * overflowX * 2 * motion, -overflowX, overflowX);
+      const cameraY =
+        centerY +
+        clamp(pans[k].y - py * overflowY * 2 * motion, -overflowY, overflowY);
+      set(f, "--camera-x", `${cameraX}px`);
+      set(f, "--camera-y", `${cameraY}px`);
+      foreground[k].forEach((cloud, i) => {
+        const depth = i === 0 ? 1 : 1.65;
+        set(
+          cloud,
+          "--fx",
+          `${(-px * 65 * depth + Math.sin(time * 0.12 + i * 3) * 19) * motion}px`,
+        );
+        set(
+          cloud,
+          "--fy",
+          `${(py * -24 * depth + Math.sin(time * 0.16 + i) * 7) * motion}px`,
+        );
+      });
       set(f, "--ix", `${px * 5 * motion}px`);
       set(f, "--iy", `${(py * 3 + Math.sin(time * 0.6 + k) * 3) * motion}px`);
       rocks[k].forEach((r) => {
@@ -187,7 +232,9 @@
     zoomTimer;
   // Every zoom input shares the same bounds and readout.
   function setZoom(value) {
-    zooms[active] = clamp(value, 0.75, zoomLimits[active]);
+    zooms[active] = clamp(value, 0.75, MAX_ZOOM);
+    if (zooms[active] <= 1) pans[active] = { x: 0, y: 0 };
+    updateCameraUI();
     page.classList.add("is-zooming", "explored");
     document.querySelector(".zoom-readout").textContent =
       Math.round(zooms[active] * 100) + "%";
@@ -251,6 +298,10 @@
       pinch = {
         distance: Math.hypot(a[0].x - a[1].x, a[0].y - a[1].y),
         zoom: zooms[active],
+        centerX: (a[0].x + a[1].x) / 2,
+        centerY: (a[0].y + a[1].y) / 2,
+        panX: pans[active].x,
+        panY: pans[active].y,
       };
       drag = null;
       track.classList.remove("is-dragging");
@@ -266,12 +317,31 @@
     }
   });
   track.addEventListener("pointermove", (e) => {
-    mx = clamp(e.clientX / innerWidth - 0.5, -0.5, 0.5);
-    my = clamp(e.clientY / innerHeight - 0.5, -0.5, 0.5);
+    updatePointer(e);
     if (!pointers.has(e.pointerId)) return;
     pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
     if (pinch && pointers.size === 2) {
       const a = [...pointers.values()];
+      const f = frames[active],
+        stage = f.parentElement;
+      const ox = Math.max(
+        0,
+        (f.offsetWidth * zooms[active] - stage.clientWidth) / 2 + 32,
+      );
+      const oy = Math.max(
+        0,
+        (f.offsetHeight * zooms[active] - stage.clientHeight) / 2 + 32,
+      );
+      pans[active].x = clamp(
+        pinch.panX + (a[0].x + a[1].x) / 2 - pinch.centerX,
+        -ox,
+        ox,
+      );
+      pans[active].y = clamp(
+        pinch.panY + (a[0].y + a[1].y) / 2 - pinch.centerY,
+        -oy,
+        oy,
+      );
       setZoom(
         (pinch.zoom * Math.hypot(a[0].x - a[1].x, a[0].y - a[1].y)) /
           Math.max(1, pinch.distance),
@@ -288,6 +358,7 @@
     }
   });
   function finish(e) {
+    if (!pointers.has(e.pointerId)) return;
     pointers.delete(e.pointerId);
     if (!pointers.size) {
       if (drag && drag.axis === "x")
@@ -301,14 +372,17 @@
   track.addEventListener("pointercancel", finish);
   track.addEventListener("lostpointercapture", finish);
   track.addEventListener("dragstart", (e) => e.preventDefault());
-  window.addEventListener(
-    "pointermove",
-    (e) => {
-      mx = clamp(e.clientX / innerWidth - 0.5, -0.5, 0.5);
-      my = clamp(e.clientY / innerHeight - 0.5, -0.5, 0.5);
-    },
-    { passive: true },
-  );
+  function updatePointer(e) {
+    if (e.pointerType === "touch") {
+      mx = 0;
+      my = 0;
+      return;
+    }
+    const rect = frames[active].parentElement.getBoundingClientRect();
+    mx = clamp((e.clientX - rect.left) / rect.width - 0.5, -0.5, 0.5);
+    my = clamp((e.clientY - rect.top) / rect.height - 0.5, -0.5, 0.5);
+  }
+  window.addEventListener("pointermove", updatePointer, { passive: true });
   track.tabIndex = 0;
   track.addEventListener("keydown", (e) => {
     if (["ArrowLeft", "ArrowRight", "Home", "End"].includes(e.key)) {
@@ -327,7 +401,7 @@
     }
   });
   window.addEventListener("resize", () => {
-    measureZoomLimits();
+    updateCameraUI();
     track.scrollTo({ left: active * track.clientWidth, behavior: "instant" });
     updateActive();
   });
