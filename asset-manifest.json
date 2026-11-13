@@ -1,0 +1,269 @@
+{
+  "project": "WonderPath \u2014 Faceted Adventure",
+  "version": "v16 \u00b7 2026-11-13",
+  "sector_count": 22,
+  "approval": "Twenty-two approved islands. Legal, Ethics & Trust is the only sector still awaiting approval.",
+  "artwork_policy": "Approved PNGs are copied byte-exact; optimized WEBP files are for browser display only.",
+  "clouds": "faceted-cloud-1.svg, faceted-cloud-2.svg, independent overlay layers",
+  "floating_rocks": "Separate layers, not applied to PNG masters. Technology rock original; remaining layers are independent decorative accents.",
+  "sectors": [
+    {
+      "order": 1,
+      "name": "Technology",
+      "master": "technology-approved.png",
+      "source_file": "faceted_technology_island_with_gradient_tree.png",
+      "dimensions": [
+        1448,
+        1086
+      ],
+      "sha256": "fac05d0a8330ba889ae32e7e33e804ade6de095b14176a1ee56532a3f397c8be"
+    },
+    {
+      "order": 2,
+      "name": "Healthcare & Life Sciences",
+      "master": "healthcare-approved.png",
+      "source_file": "polished_healthcare_floating_island.png",
+      "dimensions": [
+        1448,
+        1086
+      ],
+      "sha256": "f9f719794a10d0c969bed44724e394dfca75feb1554276df941e710db1938608"
+    },
+    {
+      "order": 3,
+      "name": "Agriculture",
+      "master": "agriculture-approved.png",
+      "source_file": "faceted_low_poly_farm_island.png",
+      "dimensions": [
+        1535,
+        1024
+      ],
+      "sha256": "207f3de9e602e5c299e634b5698e712bb2b507cc089efa927ae579ec5884dd9b"
+    },
+    {
+      "order": 4,
+      "name": "Space Economy",
+      "master": "space-economy-approved.png",
+      "source_file": "isometric_space_economy_island_campus.png",
+      "dimensions": [
+        1448,
+        1086
+      ],
+      "sha256": "d59fba4002fa6ea98191bad53d131ed786fef13f28598ca1a9254a00d908b8c1"
+    },
+    {
+      "order": 5,
+      "name": "Financial Services",
+      "master": "financial-services-approved.png",
+      "source_file": "golden_bull_financial_services_island.png",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "sha256": "c94e1b3582e60395e2d4f458afd3d03fd788a2f9b12049eaec0f09d8e990027b"
+    },
+    {
+      "order": 6,
+      "name": "Education",
+      "master": "education-approved.png",
+      "source_file": "faceted_adventure_education_campus.png",
+      "dimensions": [
+        1448,
+        1086
+      ],
+      "sha256": "ddf19175010464b72e2063949613539cfabe33acc30ce2048d68afdab863ec21"
+    },
+    {
+      "order": 7,
+      "name": "Government & Public Services",
+      "master": "government-public-services-approved.png",
+      "source_file": "wonderpath_civic_services_island.png",
+      "dimensions": [
+        1448,
+        1086
+      ],
+      "sha256": "26cedf9d745b059bfaa2a42aa3caaf10e26eed5a75195cab35ea4edd3fd22dcd"
+    },
+    {
+      "order": 8,
+      "name": "Manufacturing & Industrial",
+      "master": "manufacturing-industrial-master.png",
+      "source_file": "Faceted Manufacturing Island Adventure.png",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "sha256": "57e1b4831d2475f28d320b5c465185356bd64e7caaf46ceae982d343dedfcd53"
+    },
+    {
+      "order": 9,
+      "name": "Energy, Climate & Environment",
+      "master": "energy-climate-environment-master.png",
+      "source_file": "WonderPath_Energy_Climate_Environment_TRANSPARENT_candidate.png",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "sha256": "a9c6332516e7a265613154f46022c14ae0116f7629d3ca58230941f9640875da"
+    },
+    {
+      "order": 10,
+      "name": "Consumer, Retail & Commerce",
+      "master": "consumer-retail-commerce-approved.png",
+      "source_file": "exec-fa83a2fd-4730-4802-925c-c0c8831b4f1c.png",
+      "dimensions": [
+        1448,
+        1086
+      ],
+      "sha256": "2b24bb84a7d7b2497e8f9b1bbb9019df20b860b9d7fec696afb78b97152ff2bf",
+      "approval": "Explicitly approved by user on 2026-11-13"
+    },
+    {
+      "order": 11,
+      "name": "Media, Entertainment & Creative",
+      "master": "media-entertainment-creative-approved.png",
+      "source_file": "exec-529a2e13-c650-406f-b74e-f6b54189438e.png",
+      "dimensions": [
+        1448,
+        1086
+      ],
+      "sha256": "62bfafdd08d322ade1e359ad331c7abbdaea70bdeec083139d2d6cb06dec199b",
+      "approval": "Explicitly approved by user on 2026-11-13"
+    },
+    {
+      "order": 12,
+      "name": "Transportation, Mobility & Logistics",
+      "master": "transportation-mobility-logistics-approved.png",
+      "source_file": "exec-c09d08a4-cfb7-4c91-bac3-25975eb827a0.png",
+      "dimensions": [
+        1448,
+        1086
+      ],
+      "sha256": "3f7619b3422a8cb3630595c64be34ff1206f05e175580c922a2d11c770099642",
+      "approval": "Explicit user approval 2026-11-13, mountain and airplane revision"
+    },
+    {
+      "order": 13,
+      "name": "Professional & Business Services",
+      "master": "professional-business-services-approved.png",
+      "source_file": "exec-afe3bda6-8f2d-4a15-8364-d0ccbb5b5559.png",
+      "dimensions": [
+        1448,
+        1086
+      ],
+      "sha256": "98a62a6a833782e681f2e68dee248cc68f50c24a25d6c3277d39dcdf600d8e58",
+      "approval": "Explicit user approval 2026-11-13, revision without people"
+    },
+    {
+      "order": 14,
+      "name": "Construction & Real Estate",
+      "master": "construction-real-estate-approved.png",
+      "source_file": "exec-b7687c4d-a571-4ac2-bc4e-18965c2221d6.png",
+      "dimensions": [
+        1448,
+        1086
+      ],
+      "sha256": "e52e300b64631e0193a7517662a65bfa8a05ff8e2389edc424a68031d5465ce2",
+      "approval": "Explicit user approval 2026-11-13"
+    },
+    {
+      "order": 15,
+      "name": "Telecommunications & Connectivity",
+      "master": "telecommunications-connectivity-approved.png",
+      "source_file": "exec-8f1b633c-d9c5-49d9-bc8d-173a13a28818.png",
+      "dimensions": [
+        1448,
+        1086
+      ],
+      "sha256": "492f5ada96707627028edeb34b1743aeae2042da079e0335f0a3e5a024443110",
+      "approval": "Explicit user approval 2026-11-13, two-satellite revision"
+    },
+    {
+      "order": 16,
+      "name": "Travel, Hospitality & Tourism",
+      "master": "travel-hospitality-tourism-approved.png",
+      "source_file": "exec-4d712603-95bf-48d0-ab6e-b31131c4e5aa.png",
+      "dimensions": [
+        1448,
+        1086
+      ],
+      "sha256": "d336758b9c63fdaf6bfb934421647cd0c53189db58a9e101e701f5ea5841baa6",
+      "approval": "Explicit user approval 2026-11-13"
+    },
+    {
+      "order": 17,
+      "name": "Nonprofit, Social Impact & Philanthropy",
+      "master": "nonprofit-social-impact-philanthropy-approved.png",
+      "source_file": "exec-5df57d5c-61c5-4641-b960-831c5127491f.png",
+      "dimensions": [
+        1448,
+        1086
+      ],
+      "sha256": "f44c28a0dd27ef2641c8c0f65cd0e43c4332b26b0c450f55df171ffabe54a8a7",
+      "approval": "Explicit user approval 2026-11-13"
+    },
+    {
+      "order": 18,
+      "name": "Wellness, Fitness & Sports",
+      "master": "wellness-fitness-sports-approved.png",
+      "source_file": "exec-94b7f36e-8c19-4413-af40-3832f8c3e281.png",
+      "dimensions": [
+        1448,
+        1086
+      ],
+      "sha256": "558ab0f11ca5abd3946bc9552232c02d370b96a29e2789f090f0e885782107a9",
+      "approval": "Explicit user approval 2026-11-13"
+    },
+    {
+      "order": 19,
+      "name": "Science, Research & Innovation",
+      "master": "science-research-innovation-approved.png",
+      "source_file": "exec-3586159b-8ed9-4dfe-8cf3-9038dd7c936d.png",
+      "dimensions": [
+        1448,
+        1086
+      ],
+      "sha256": "06f1d7fb2878923bab1754ea270340987cad7b862cb69a125f2bf83afad056d5",
+      "approval": "User approved revised candidate 2026-11-13"
+    },
+    {
+      "order": 20,
+      "name": "Defense, Security & Public Protection",
+      "master": "defense-security-public-protection-approved.png",
+      "source_file": "exec-ef91a235-7be4-4f31-9cf9-00c89a19369a.png",
+      "dimensions": [
+        1448,
+        1086
+      ],
+      "sha256": "534ec65aab2be9e80a8b2d98dc6d12d13b104429a96cf7422c459b5234ae4787",
+      "approval": "User approved Pentagon-inspired revision 2026-11-13"
+    },
+    {
+      "order": 21,
+      "name": "Arts, Culture & Heritage",
+      "master": "arts-culture-heritage-approved.png",
+      "source_file": "exec-30a0b8a0-dc40-4c0d-92bc-50f3a902aa19.png",
+      "dimensions": [
+        1448,
+        1086
+      ],
+      "sha256": "7bf13330746bcdecd64dc2ba94b3c825ee6a2d60f3be187ca9e4a2d038ed1572",
+      "approval": "Explicit user approval 2026-11-13"
+    },
+    {
+      "order": 22,
+      "name": "Future of Work & Emerging Industries",
+      "master": "future-work-emerging-industries-approved.png",
+      "source_file": "exec-11091e4b-1452-4afa-a6c7-2970df78656c.png",
+      "dimensions": [
+        1448,
+        1086
+      ],
+      "sha256": "7d0f0b9ebacf0e9ad8fc1fa1d3bef02f3071b9d981ccf62906a409453d2b7cab",
+      "approval": "Explicit user approval 2026-11-13"
+    }
+  ],
+  "presentation_version": "depth-and-zoom-v1",
+  "navigation": "Horizontal wheel/drag: sectors. Vertical wheel: zoom .75\u20131.7. Touch swipe/pinch supported.",
+  "rocks": "Six independent sprite elements per island, shared 17 KB WebP atlas."
+}

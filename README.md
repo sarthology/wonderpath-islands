@@ -1,29 +1,55 @@
 # WonderPath Islands
 
-Static site repository for the 22 approved WonderPath islands. No build dependencies are required.
+Twenty-two approved floating islands with responsive artwork, parallax clouds and scenery, independently moving rocks, and island navigation.
 
-## Source status
+Plain HTML, CSS, and JavaScript. No package installation, framework, or build step.
 
-The approved standalone HTML has not yet been supplied to this checkout. Asset extraction, interaction verification, and the site entry point are pending that source file.
-
-## Local preview
-
-Once `public/index.html` is present, run:
+## Run locally
 
 ```sh
-python3 -m http.server 8000 --directory public
+python3 -m http.server 3000 --directory public
 ```
 
-Open http://localhost:8000.
+Open http://localhost:3000.
 
-## Vercel
+## Files
 
-Import the private GitHub repository with the repository root as the Root Directory. The tracked `vercel.json` selects no framework, disables installation and build commands, and serves `public/`.
+- `public/index.html`: island content, accessible artwork descriptions, and responsive image sources.
+- `public/assets/layout.css`: original layout, typography, backgrounds, and breakpoints.
+- `public/assets/scene.css`: layered motion, zoom, and phone composition.
+- `public/assets/scene.js`: navigation, wheel/swipe/pinch zoom, parallax, and independent rocks.
+- `public/assets/`: all supplied WebP and SVG artwork, copied without modification.
+- `asset-manifest.json`: supplied artwork provenance metadata. The PNG masters it references were not included in the supplied ZIP; the display WebP files are included.
 
-## Required behavior
+## Controls
 
-- Horizontal scrolling and swiping change islands.
-- Vertical scrolling and swiping zoom.
-- Mobile pinch gestures zoom.
-- Preserve all 22 approved islands, artwork, parallax, independently moving rocks, and navigation.
-- Preserve responsive layout and reduced-motion support.
+- Horizontal trackpad scrolling, Shift + wheel, or a horizontal drag/swipe changes islands.
+- Vertical scrolling or swiping zooms the current island.
+- A two-finger pinch zooms on touch devices.
+- Focus the island scene with Tab. Left/Right navigate; Home/End go to the first/last island.
+- Plus/Minus or Up/Down zoom; 0 resets zoom.
+
+Zoom is remembered separately for each island and limited to 75–170%. Reduced-motion preferences disable ambient motion and smooth island transitions; changes to the preference take effect while the page is open.
+
+## GitHub Pages
+
+The source lives on `main`; the `gh-pages` branch contains only the contents of `public/`. GitHub Pages publishes from the root of `gh-pages`, with `.nojekyll` disabling Jekyll processing. No build dependencies, secrets, or environment variables are required.
+
+After committing changes on `main`, publish them with:
+
+```sh
+git push origin main
+git subtree push --prefix public origin gh-pages
+```
+
+In repository Settings → Pages, select Deploy from a branch → `gh-pages` → `/ (root)`.
+
+All asset URLs are relative, so the site works under `/wonderpath-islands/`. GitHub Pages sites are publicly viewable; keeping the source repository private requires a plan that supports Pages for private repositories.
+
+## Optional Vercel deployment
+
+The retained `vercel.json` also supports Vercel: import the repository root, use no framework, and serve `public/`. Installation and build commands are empty.
+
+## Source
+
+Imported from the supplied `WonderPath-Project.zip`. The layout stylesheet was extracted from the HTML and paths were adjusted for its new location. HTML, CSS, and JavaScript were formatted for readability. The artwork and island text remain unchanged. The zoom readout now updates for pinch gestures and keyboard reset, each island restores its own zoom, and reduced-motion changes are observed live. A short-landscape layout keeps artwork visible on phones and tablets.

@@ -1,0 +1,878 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#f8e5df" />
+    <meta
+      name="description"
+      content="WonderPath — Faceted Adventure. Explore twenty-two beautifully illustrated floating islands."
+    />
+    <title>Faceted Adventure — WonderPath | Twenty-Two Islands</title>
+    <link rel="stylesheet" href="assets/layout.css" />
+    <link rel="stylesheet" href="assets/scene.css" />
+  </head>
+  <body>
+    <main class="page" id="page">
+      <div class="sun-glow" aria-hidden="true"></div>
+      <div class="distant-horizon" aria-hidden="true"></div>
+      <div class="horizon-near" aria-hidden="true"></div>
+      <div class="atmosphere" aria-hidden="true"></div>
+      <div class="mist-soft" aria-hidden="true"></div>
+      <header class="topbar">
+        <div class="brand">
+          <span>WonderPath</span><span class="brand-icon">✳</span>
+        </div>
+        <div class="top-label">Faceted Adventure</div>
+      </header>
+      <div class="cloud cloud-one" aria-hidden="true">
+        <img src="assets/faceted-cloud-1.svg" alt="" />
+      </div>
+      <div class="cloud cloud-two" aria-hidden="true">
+        <img src="assets/faceted-cloud-2.svg" alt="" />
+      </div>
+      <div
+        class="track"
+        id="track"
+        aria-label="Faceted Adventure sectors; drag or scroll horizontally between islands; scroll vertically to zoom"
+      >
+        <section
+          class="panel"
+          aria-label="Technology sector"
+          data-sector="technology"
+        >
+          <div class="panel-grid">
+            <div class="copy">
+              <div class="eyebrow">Island Worlds <b>/</b> 06</div>
+              <h1><span>Faceted</span><span>Adventure</span></h1>
+              <div class="caption">
+                Now exploring <span class="sector-position">01 / 22</span>
+              </div>
+              <div class="sector-name">Technology</div>
+              <p class="description">
+                A little world of big ideas, where robotics, clean energy and
+                connectivity come alive.
+              </p>
+            </div>
+            <div class="art-stage">
+              <div class="art-frame">
+                <img
+                  class="island-layer"
+                  src="assets/technology-web.webp"
+                  srcset="
+                    assets/technology-web-small.webp  800w,
+                    assets/technology-web.webp       1448w
+                  "
+                  sizes="(max-width: 950px) 92vw, 64vw"
+                  decoding="async"
+                  draggable="false"
+                  loading="eager"
+                  alt="Technology island with a satellite station, robotics workshop, data center, solar charging, friendly robots and a faceted pink-orange tree."
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+        <section
+          class="panel"
+          aria-label="Healthcare &amp; Life Sciences sector"
+          data-sector="healthcare"
+        >
+          <div class="panel-grid">
+            <div class="copy">
+              <div class="eyebrow">Island Worlds <b>/</b> 06</div>
+              <h1><span>Faceted</span><span>Adventure</span></h1>
+              <div class="caption">
+                Now exploring <span class="sector-position">02 / 22</span>
+              </div>
+              <div class="sector-name">Healthcare &amp; Life Sciences</div>
+              <p class="description">
+                A living world of care and discovery, bringing medicine, biology
+                and nature together.
+              </p>
+            </div>
+            <div class="art-stage">
+              <div class="art-frame">
+                <img
+                  class="island-layer"
+                  src="assets/healthcare-web.webp"
+                  srcset="
+                    assets/healthcare-web-small.webp  800w,
+                    assets/healthcare-web.webp       1448w
+                  "
+                  sizes="(max-width: 950px) 92vw, 64vw"
+                  decoding="async"
+                  draggable="false"
+                  loading="lazy"
+                  alt="Healthcare and Life Sciences island with a hospital, biomedical laboratory, research greenhouse, central DNA monument, canals and waterfalls."
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+        <section
+          class="panel"
+          aria-label="Agriculture sector"
+          data-sector="agriculture"
+        >
+          <div class="panel-grid">
+            <div class="copy">
+              <div class="eyebrow">Island Worlds <b>/</b> 06</div>
+              <h1><span>Faceted</span><span>Adventure</span></h1>
+              <div class="caption">
+                Now exploring <span class="sector-position">03 / 22</span>
+              </div>
+              <div class="sector-name">
+                Agriculture, Food &amp; Natural Resources
+              </div>
+              <p class="description">
+                Fields, food and new farming ideas flourish side by side, from
+                orchards to autonomous agriculture.
+              </p>
+            </div>
+            <div class="art-stage">
+              <div class="art-frame">
+                <img
+                  class="island-layer"
+                  src="assets/agriculture-web.webp"
+                  srcset="
+                    assets/agriculture-web-small.webp  800w,
+                    assets/agriculture-web.webp       1535w
+                  "
+                  sizes="(max-width: 950px) 92vw, 64vw"
+                  decoding="async"
+                  draggable="false"
+                  loading="lazy"
+                  alt="Agriculture island with farmstead, windmill, crop terraces, greenhouses, agricultural drones, autonomous rover and waterfall."
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+        <section
+          class="panel"
+          aria-label="Space Economy sector"
+          data-sector="space-economy"
+        >
+          <div class="panel-grid">
+            <div class="copy">
+              <div class="eyebrow">Island Worlds <b>/</b> 06</div>
+              <h1><span>Faceted</span><span>Adventure</span></h1>
+              <div class="caption">
+                Now exploring <span class="sector-position">04 / 22</span>
+              </div>
+              <div class="sector-name">Space Economy</div>
+              <p class="description">
+                From launchpads to satellites, a vibrant world of exploration
+                and orbital industry.
+              </p>
+            </div>
+            <div class="art-stage">
+              <div class="art-frame">
+                <img
+                  class="island-layer"
+                  src="assets/space-economy-web.webp"
+                  srcset="
+                    assets/space-economy-web-small.webp  800w,
+                    assets/space-economy-web.webp       1448w
+                  "
+                  sizes="(max-width: 950px) 92vw, 64vw"
+                  decoding="async"
+                  draggable="false"
+                  loading="lazy"
+                  alt="Space Economy island with a rocket launchpad, satellite assembly facility, tracking dish, mission control and rover."
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+        <section
+          class="panel"
+          aria-label="Financial Services sector"
+          data-sector="financial-services"
+        >
+          <div class="panel-grid">
+            <div class="copy">
+              <div class="eyebrow">Island Worlds <b>/</b> 06</div>
+              <h1><span>Faceted</span><span>Adventure</span></h1>
+              <div class="caption">
+                Now exploring <span class="sector-position">05 / 22</span>
+              </div>
+              <div class="sector-name">Financial Services</div>
+              <p class="description">
+                An energetic city of banking, markets, payments and investment,
+                centered around a golden bull.
+              </p>
+            </div>
+            <div class="art-stage">
+              <div class="art-frame">
+                <img
+                  class="island-layer"
+                  src="assets/financial-services-web.webp"
+                  srcset="
+                    assets/financial-services-web-small.webp  800w,
+                    assets/financial-services-web.webp       1536w
+                  "
+                  sizes="(max-width: 950px) 92vw, 64vw"
+                  decoding="async"
+                  draggable="false"
+                  loading="lazy"
+                  alt="Financial Services island with a central golden bull sculpture, bank, payment hub, financial offices and market charts."
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+        <section
+          class="panel"
+          aria-label="Education sector"
+          data-sector="education"
+        >
+          <div class="panel-grid">
+            <div class="copy">
+              <div class="eyebrow">Island Worlds <b>/</b> 06</div>
+              <h1><span>Faceted</span><span>Adventure</span></h1>
+              <div class="caption">
+                Now exploring <span class="sector-position">06 / 22</span>
+              </div>
+              <div class="sector-name">Education</div>
+              <p class="description">
+                Ideas take root across libraries, classrooms, labs and shared
+                spaces for curious minds.
+              </p>
+            </div>
+            <div class="art-stage">
+              <div class="art-frame">
+                <img
+                  class="island-layer"
+                  src="assets/education-web.webp"
+                  srcset="
+                    assets/education-web-small.webp  800w,
+                    assets/education-web.webp       1448w
+                  "
+                  sizes="(max-width: 950px) 92vw, 64vw"
+                  decoding="async"
+                  draggable="false"
+                  loading="lazy"
+                  alt="Education island with school, library, labs, computer classroom, school bus and an open book fountain."
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+        <section
+          class="panel"
+          aria-label="Government &amp; Public Services sector"
+          data-sector="government-public-services"
+        >
+          <div class="panel-grid">
+            <div class="copy">
+              <div class="eyebrow">Island Worlds <b>/</b> 06</div>
+              <h1><span>Faceted</span><span>Adventure</span></h1>
+              <div class="caption">
+                Now exploring <span class="sector-position">07 / 22</span>
+              </div>
+              <div class="sector-name">Government &amp; Public Services</div>
+              <p class="description">
+                A welcoming civic district shaped around public service, safety,
+                justice and community.
+              </p>
+            </div>
+            <div class="art-stage">
+              <div class="art-frame">
+                <img
+                  class="island-layer"
+                  src="assets/government-public-services-web.webp"
+                  srcset="
+                    assets/government-public-services-web-small.webp  800w,
+                    assets/government-public-services-web.webp       1448w
+                  "
+                  sizes="(max-width: 950px) 92vw, 64vw"
+                  decoding="async"
+                  draggable="false"
+                  loading="lazy"
+                  alt="Government and Public Services island with a civic hall, courthouse, fire station, public-service center and fountain."
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+        <section
+          class="panel"
+          aria-label="Manufacturing &amp; Industrial sector"
+          data-sector="manufacturing-industrial"
+        >
+          <div class="panel-grid">
+            <div class="copy">
+              <div class="eyebrow">Island Worlds <b>/</b> 06</div>
+              <h1><span>Faceted</span><span>Adventure</span></h1>
+              <div class="caption">
+                Now exploring <span class="sector-position">08 / 22</span>
+              </div>
+              <div class="sector-name">Manufacturing &amp; Industrial</div>
+              <p class="description">
+                Where materials become machines, with robotics, precision tools
+                and connected production.
+              </p>
+            </div>
+            <div class="art-stage">
+              <div class="art-frame">
+                <img
+                  class="island-layer"
+                  src="assets/manufacturing-industrial-web.webp"
+                  srcset="
+                    assets/manufacturing-industrial-web-small.webp  800w,
+                    assets/manufacturing-industrial-web.webp       1536w
+                  "
+                  sizes="(max-width: 950px) 92vw, 64vw"
+                  decoding="async"
+                  draggable="false"
+                  loading="lazy"
+                  alt="An industrial island with robotic assembly, silos, warehouses, cargo handling, and a central gear monument."
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+        <section
+          class="panel"
+          aria-label="Energy, Climate &amp; Environment sector"
+          data-sector="energy-climate-environment"
+        >
+          <div class="panel-grid">
+            <div class="copy">
+              <div class="eyebrow">Island Worlds <b>/</b> 06</div>
+              <h1><span>Faceted</span><span>Adventure</span></h1>
+              <div class="caption">
+                Now exploring <span class="sector-position">09 / 22</span>
+              </div>
+              <div class="sector-name">Energy, Climate &amp; Environment</div>
+              <p class="description">
+                A world powered by sun, wind and water, connecting clean energy
+                with care for the planet.
+              </p>
+            </div>
+            <div class="art-stage">
+              <div class="art-frame">
+                <img
+                  class="island-layer"
+                  src="assets/energy-climate-environment-web.webp"
+                  srcset="
+                    assets/energy-climate-environment-web-small.webp  800w,
+                    assets/energy-climate-environment-web.webp       1536w
+                  "
+                  sizes="(max-width: 950px) 92vw, 64vw"
+                  decoding="async"
+                  draggable="false"
+                  loading="lazy"
+                  alt="An environmental island with wind turbines, solar panels, hydroelectric power, a greenhouse, recycling facilities and an Earth monument."
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+        <section
+          class="panel"
+          aria-label="Consumer, Retail &amp; Commerce sector"
+          data-sector="consumer-retail-commerce"
+        >
+          <div class="panel-grid">
+            <div class="copy">
+              <div class="eyebrow">Island Worlds <b>/</b> 06</div>
+              <h1><span>Faceted</span><span>Adventure</span></h1>
+              <div class="caption">
+                Now exploring <span class="sector-position">10 / 22</span>
+              </div>
+              <div class="sector-name">Consumer, Retail &amp; Commerce</div>
+              <p class="description">
+                A lively district of shops, markets and cafés, connecting
+                everyday discoveries with modern commerce.
+              </p>
+            </div>
+            <div class="art-stage">
+              <div class="art-frame">
+                <img
+                  class="island-layer"
+                  src="assets/consumer-retail-commerce-approved.webp"
+                  srcset="
+                    assets/consumer-retail-commerce-approved-small.webp  800w,
+                    assets/consumer-retail-commerce-approved.webp       1448w
+                  "
+                  sizes="(max-width: 950px) 92vw, 64vw"
+                  decoding="async"
+                  draggable="false"
+                  loading="lazy"
+                  alt="Retail island with a glass shopping arcade, produce market, café, boutiques, parcel hub and delivery vehicles."
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+        <section
+          class="panel"
+          aria-label="Media, Entertainment &amp; Creative sector"
+          data-sector="media-entertainment-creative"
+        >
+          <div class="panel-grid">
+            <div class="copy">
+              <div class="eyebrow">Island Worlds <b>/</b> 06</div>
+              <h1><span>Faceted</span><span>Adventure</span></h1>
+              <div class="caption">
+                Now exploring <span class="sector-position">11 / 22</span>
+              </div>
+              <div class="sector-name">Media, Entertainment &amp; Creative</div>
+              <p class="description">
+                Stories take shape across film sets, recording studios, art
+                workshops and spaces for live performance.
+              </p>
+            </div>
+            <div class="art-stage">
+              <div class="art-frame">
+                <img
+                  class="island-layer"
+                  src="assets/media-entertainment-creative-approved.webp"
+                  srcset="
+                    assets/media-entertainment-creative-approved-small.webp  800w,
+                    assets/media-entertainment-creative-approved.webp       1448w
+                  "
+                  sizes="(max-width: 950px) 92vw, 64vw"
+                  decoding="async"
+                  draggable="false"
+                  loading="lazy"
+                  alt="Creative island with a cinema, film soundstage, recording studio, art workshop and outdoor performance stage."
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+        <section
+          class="panel"
+          aria-label="Transportation, Mobility &amp; Logistics sector"
+          data-sector="transportation-mobility-logistics"
+        >
+          <div class="panel-grid">
+            <div class="copy">
+              <div class="eyebrow">Island Worlds <b>/</b> 06</div>
+              <h1><span>Faceted</span><span>Adventure</span></h1>
+              <div class="caption">
+                Now exploring <span class="sector-position">12 / 22</span>
+              </div>
+              <div class="sector-name">
+                Transportation, Mobility &amp; Logistics
+              </div>
+              <p class="description">
+                Connected journeys by air, rail, road and sea, bringing people,
+                places and goods together.
+              </p>
+            </div>
+            <div class="art-stage">
+              <div class="art-frame">
+                <img
+                  class="island-layer"
+                  src="assets/transportation-mobility-logistics-approved.webp"
+                  srcset="
+                    assets/transportation-mobility-logistics-approved-small.webp  800w,
+                    assets/transportation-mobility-logistics-approved.webp       1448w
+                  "
+                  sizes="(max-width: 950px) 92vw, 64vw"
+                  decoding="async"
+                  draggable="false"
+                  loading="lazy"
+                  alt="A mountain transport island with a passenger airplane and airport, railway station and train, electric bus, roads, bicycle station and cargo harbor."
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+        <section
+          class="panel"
+          aria-label="Professional &amp; Business Services sector"
+          data-sector="professional-business-services"
+        >
+          <div class="panel-grid">
+            <div class="copy">
+              <div class="eyebrow">Island Worlds <b>/</b> 06</div>
+              <h1><span>Faceted</span><span>Adventure</span></h1>
+              <div class="caption">
+                Now exploring <span class="sector-position">13 / 22</span>
+              </div>
+              <div class="sector-name">
+                Professional &amp; Business Services
+              </div>
+              <p class="description">
+                A world of expertise, connecting business strategy, accounting,
+                recruitment and shared success.
+              </p>
+            </div>
+            <div class="art-stage">
+              <div class="art-frame">
+                <img
+                  class="island-layer"
+                  src="assets/professional-business-services-approved.webp"
+                  srcset="
+                    assets/professional-business-services-approved-small.webp  800w,
+                    assets/professional-business-services-approved.webp       1448w
+                  "
+                  sizes="(max-width: 950px) 92vw, 64vw"
+                  decoding="async"
+                  draggable="false"
+                  loading="lazy"
+                  alt="Professional services island with consulting offices, accounting and audit studio, recruitment agency, business advisory headquarters and faceted mountain terrain."
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+        <section
+          class="panel"
+          aria-label="Construction &amp; Real Estate sector"
+          data-sector="construction-real-estate"
+        >
+          <div class="panel-grid">
+            <div class="copy">
+              <div class="eyebrow">Island Worlds <b>/</b> 06</div>
+              <h1><span>Faceted</span><span>Adventure</span></h1>
+              <div class="caption">
+                Now exploring <span class="sector-position">14 / 22</span>
+              </div>
+              <div class="sector-name">Construction &amp; Real Estate</div>
+              <p class="description">
+                From blueprints to welcoming neighborhoods, a world of building,
+                design and places to call home.
+              </p>
+            </div>
+            <div class="art-stage">
+              <div class="art-frame">
+                <img
+                  class="island-layer"
+                  src="assets/construction-real-estate-approved.webp"
+                  srcset="
+                    assets/construction-real-estate-approved-small.webp  800w,
+                    assets/construction-real-estate-approved.webp       1448w
+                  "
+                  sizes="(max-width: 950px) 92vw, 64vw"
+                  decoding="async"
+                  draggable="false"
+                  loading="lazy"
+                  alt="A terraced construction and real estate island with a crane, active building site, excavator, mixer truck, finished apartment building, homes and an architecture studio."
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+        <section
+          class="panel"
+          aria-label="Telecommunications &amp; Connectivity sector"
+          data-sector="telecommunications-connectivity"
+        >
+          <div class="panel-grid">
+            <div class="copy">
+              <div class="eyebrow">Island Worlds <b>/</b> 06</div>
+              <h1><span>Faceted</span><span>Adventure</span></h1>
+              <div class="caption">
+                Now exploring <span class="sector-position">15 / 22</span>
+              </div>
+              <div class="sector-name">
+                Telecommunications &amp; Connectivity
+              </div>
+              <p class="description">
+                A connected world of mobile networks, fiber links and
+                satellites, bringing distant places closer.
+              </p>
+            </div>
+            <div class="art-stage">
+              <div class="art-frame">
+                <img
+                  class="island-layer"
+                  src="assets/telecommunications-connectivity-approved.webp"
+                  srcset="
+                    assets/telecommunications-connectivity-approved-small.webp  800w,
+                    assets/telecommunications-connectivity-approved.webp       1448w
+                  "
+                  sizes="(max-width: 950px) 92vw, 64vw"
+                  decoding="async"
+                  draggable="false"
+                  loading="lazy"
+                  alt="Telecommunications island with two satellites, mobile network mast, tracking dish, fiber exchange, network operations centre and service van."
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+        <section
+          class="panel"
+          aria-label="Travel, Hospitality &amp; Tourism sector"
+          data-sector="travel-hospitality-tourism"
+        >
+          <div class="panel-grid">
+            <div class="copy">
+              <div class="eyebrow">Island Worlds <b>/</b> 06</div>
+              <h1><span>Faceted</span><span>Adventure</span></h1>
+              <div class="caption">
+                Now exploring <span class="sector-position">16 / 22</span>
+              </div>
+              <div class="sector-name">Travel, Hospitality &amp; Tourism</div>
+              <p class="description">
+                A welcoming escape of coastal stays, shared tables and journeys
+                of discovery.
+              </p>
+            </div>
+            <div class="art-stage">
+              <div class="art-frame">
+                <img
+                  class="island-layer"
+                  src="assets/travel-hospitality-tourism-approved.webp"
+                  srcset="
+                    assets/travel-hospitality-tourism-approved-small.webp  800w,
+                    assets/travel-hospitality-tourism-approved.webp       1448w
+                  "
+                  sizes="(max-width: 950px) 92vw, 64vw"
+                  decoding="async"
+                  draggable="false"
+                  loading="lazy"
+                  alt="Coastal holiday island with boutique hotel, restaurant terrace, pool, beach, sailboat and visitor centre."
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+        <section
+          class="panel"
+          aria-label="Nonprofit, Social Impact &amp; Philanthropy sector"
+          data-sector="nonprofit-social-impact-philanthropy"
+        >
+          <div class="panel-grid">
+            <div class="copy">
+              <div class="eyebrow">Island Worlds <b>/</b> 06</div>
+              <h1><span>Faceted</span><span>Adventure</span></h1>
+              <div class="caption">
+                Now exploring <span class="sector-position">17 / 22</span>
+              </div>
+              <div class="sector-name">
+                Nonprofit, Social Impact &amp; Philanthropy
+              </div>
+              <p class="description">
+                Global cooperation takes shape through humanitarian aid,
+                community development and shared opportunity.
+              </p>
+            </div>
+            <div class="art-stage">
+              <div class="art-frame">
+                <img
+                  class="island-layer"
+                  src="assets/nonprofit-social-impact-philanthropy-approved.webp"
+                  srcset="
+                    assets/nonprofit-social-impact-philanthropy-approved-small.webp  800w,
+                    assets/nonprofit-social-impact-philanthropy-approved.webp       1448w
+                  "
+                  sizes="(max-width: 950px) 92vw, 64vw"
+                  decoding="async"
+                  draggable="false"
+                  loading="lazy"
+                  alt="UN-inspired humanitarian island with blue flags, international assembly, relief depot, development office and clean-water garden."
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+        <section
+          class="panel"
+          aria-label="Wellness, Fitness &amp; Sports sector"
+          data-sector="wellness-fitness-sports"
+        >
+          <div class="panel-grid">
+            <div class="copy">
+              <div class="eyebrow">Island Worlds <b>/</b> 06</div>
+              <h1><span>Faceted</span><span>Adventure</span></h1>
+              <div class="caption">
+                Now exploring <span class="sector-position">18 / 22</span>
+              </div>
+              <div class="sector-name">Wellness, Fitness &amp; Sports</div>
+              <p class="description">
+                A world in motion, connecting fitness, sport and quieter moments
+                of wellbeing.
+              </p>
+            </div>
+            <div class="art-stage">
+              <div class="art-frame">
+                <img
+                  class="island-layer"
+                  src="assets/wellness-fitness-sports-approved.webp"
+                  srcset="
+                    assets/wellness-fitness-sports-approved-small.webp  800w,
+                    assets/wellness-fitness-sports-approved.webp       1448w
+                  "
+                  sizes="(max-width: 950px) 92vw, 64vw"
+                  decoding="async"
+                  draggable="false"
+                  loading="lazy"
+                  alt="Active living island with open gym, sports centre, basketball court, running track, lap pool and peaceful yoga pavilion."
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+        <section
+          class="panel"
+          aria-label="Science, Research &amp; Innovation sector"
+          data-sector="science-research-innovation"
+        >
+          <div class="panel-grid">
+            <div class="copy">
+              <div class="eyebrow">Island Worlds <b>/</b> 06</div>
+              <h1><span>Faceted</span><span>Adventure</span></h1>
+              <div class="caption">
+                Now exploring <span class="sector-position">19 / 22</span>
+              </div>
+              <div class="sector-name">Science, Research &amp; Innovation</div>
+              <p class="description">
+                A world of discovery, connecting scientific experiments,
+                research and ideas that shape tomorrow.
+              </p>
+            </div>
+            <div class="art-stage">
+              <div class="art-frame">
+                <img
+                  class="island-layer"
+                  src="assets/science-research-innovation-approved.webp"
+                  srcset="
+                    assets/science-research-innovation-approved-small.webp  800w,
+                    assets/science-research-innovation-approved.webp       1448w
+                  "
+                  sizes="(max-width: 950px) 92vw, 64vw"
+                  decoding="async"
+                  draggable="false"
+                  loading="lazy"
+                  alt="Scientific research island with laboratories, glass bridge, observatory, chemistry pavilion and engineering experiments."
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+        <section
+          class="panel"
+          aria-label="Defense, Security &amp; Public Protection sector"
+          data-sector="defense-security-public-protection"
+        >
+          <div class="panel-grid">
+            <div class="copy">
+              <div class="eyebrow">Island Worlds <b>/</b> 06</div>
+              <h1><span>Faceted</span><span>Adventure</span></h1>
+              <div class="caption">
+                Now exploring <span class="sector-position">20 / 22</span>
+              </div>
+              <div class="sector-name">
+                Defense, Security &amp; Public Protection
+              </div>
+              <p class="description">
+                Preparedness and protection come together across defense, rescue
+                and emergency response.
+              </p>
+            </div>
+            <div class="art-stage">
+              <div class="art-frame">
+                <img
+                  class="island-layer"
+                  src="assets/defense-security-public-protection-approved.webp"
+                  srcset="
+                    assets/defense-security-public-protection-approved-small.webp  800w,
+                    assets/defense-security-public-protection-approved.webp       1448w
+                  "
+                  sizes="(max-width: 950px) 92vw, 64vw"
+                  decoding="async"
+                  draggable="false"
+                  loading="lazy"
+                  alt="Security island with Pentagon-inspired headquarters, rescue helicopter, response vehicles, cybersecurity facilities, radar and watchtower."
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+        <section
+          class="panel"
+          aria-label="Arts, Culture &amp; Heritage sector"
+          data-sector="arts-culture-heritage"
+        >
+          <div class="panel-grid">
+            <div class="copy">
+              <div class="eyebrow">Island Worlds <b>/</b> 06</div>
+              <h1><span>Faceted</span><span>Adventure</span></h1>
+              <div class="caption">
+                Now exploring <span class="sector-position">21 / 22</span>
+              </div>
+              <div class="sector-name">Arts, Culture &amp; Heritage</div>
+              <p class="description">
+                Living traditions and new expressions meet across museums,
+                workshops and cultural spaces.
+              </p>
+            </div>
+            <div class="art-stage">
+              <div class="art-frame">
+                <img
+                  class="island-layer"
+                  src="assets/arts-culture-heritage-approved.webp"
+                  srcset="
+                    assets/arts-culture-heritage-approved-small.webp  800w,
+                    assets/arts-culture-heritage-approved.webp       1448w
+                  "
+                  sizes="(max-width: 950px) 92vw, 64vw"
+                  decoding="async"
+                  draggable="false"
+                  loading="lazy"
+                  alt="Arts and heritage island with museum, gallery, artisan workshop, historic tower and amphitheatre."
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+        <section
+          class="panel"
+          aria-label="Future of Work &amp; Emerging Industries sector"
+          data-sector="future-work-emerging-industries"
+        >
+          <div class="panel-grid">
+            <div class="copy">
+              <div class="eyebrow">Island Worlds <b>/</b> 06</div>
+              <h1><span>Faceted</span><span>Adventure</span></h1>
+              <div class="caption">
+                Now exploring <span class="sector-position">22 / 22</span>
+              </div>
+              <div class="sector-name">
+                Future of Work &amp; Emerging Industries
+              </div>
+              <p class="description">
+                New ways of working take shape through collaboration, immersive
+                learning and emerging industries.
+              </p>
+            </div>
+            <div class="art-stage">
+              <div class="art-frame">
+                <img
+                  class="island-layer"
+                  src="assets/future-work-emerging-industries-approved.webp"
+                  srcset="
+                    assets/future-work-emerging-industries-approved-small.webp  800w,
+                    assets/future-work-emerging-industries-approved.webp       1448w
+                  "
+                  sizes="(max-width: 950px) 92vw, 64vw"
+                  decoding="async"
+                  draggable="false"
+                  loading="lazy"
+                  alt="Future work island with modular coworking, immersive training, automation workshop and circular-economy innovation pavilion."
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div class="gesture-note">
+        Drag or scroll sideways to explore <span>·</span> Scroll up to zoom in
+      </div>
+      <div class="zoom-readout" aria-live="polite"></div>
+    </main>
+    <script src="assets/scene.js" defer></script>
+  </body>
+</html>
