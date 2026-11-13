@@ -30,7 +30,17 @@
   function updateCameraUI() {
     const close = zooms[active] > 1.3;
     page.classList.toggle("has-zoom", close);
-    panels.forEach((p, i) => p.classList.toggle("is-close", zooms[i] > 1.3));
+    panels.forEach((panel, i) => {
+      const close = zooms[i] > 1.3;
+      if (close && !panel.classList.contains("is-close")) {
+        frames[i].style.setProperty(
+          "--overview-width",
+          `${frames[i].offsetWidth}px`,
+        );
+      }
+      panel.classList.toggle("is-close", close);
+      panel.querySelector(".copy").setAttribute("aria-hidden", String(close));
+    });
     const touch = matchMedia("(pointer:coarse)").matches || innerWidth <= 700;
     note.textContent = close
       ? touch
@@ -130,8 +140,10 @@
     set(page, "--near-x", `${-progress * 5 - px * 15 * motion}px`);
     set(page, "--near-y", `${py * 6 * motion}px`);
     set(page, "--sun-x", `${-px * 5 * motion}px`);
+    set(page, "--sky-zoom", 1 + Math.max(0, zoom - 1) * 0.045);
     clouds.forEach((c, i) => {
       const d = [1.4, 2.1, 0.4][i];
+      set(c, "--cloud-zoom", 1 + Math.max(0, zoom - 1) * d * 0.13);
       set(
         c,
         "--cx",
@@ -180,15 +192,16 @@
       set(f, "--camera-y", `${cameraY}px`);
       foreground[k].forEach((cloud, i) => {
         const depth = i === 0 ? 1 : 1.65;
+        set(cloud, "--cloud-zoom", 1 + Math.max(0, z - 1) * depth * 0.36);
         set(
           cloud,
           "--fx",
-          `${(-px * 65 * depth + Math.sin(time * 0.12 + i * 3) * 19) * motion}px`,
+          `${cameraX * depth * 0.22 + (-px * 65 * depth + Math.sin(time * 0.12 + i * 3) * 19) * motion}px`,
         );
         set(
           cloud,
           "--fy",
-          `${(py * -24 * depth + Math.sin(time * 0.16 + i) * 7) * motion}px`,
+          `${cameraY * depth * 0.16 + (py * -24 * depth + Math.sin(time * 0.16 + i) * 7) * motion}px`,
         );
       });
       set(f, "--ix", `${px * 5 * motion}px`);
@@ -401,6 +414,8 @@
     }
   });
   window.addEventListener("resize", () => {
+    // Re-measure the overview layout at the new screen size, then restore immersion.
+    panels.forEach((panel) => panel.classList.remove("is-close"));
     updateCameraUI();
     track.scrollTo({ left: active * track.clientWidth, behavior: "instant" });
     updateActive();
