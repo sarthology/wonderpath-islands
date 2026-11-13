@@ -16,6 +16,26 @@
     hidden = false;
   const zooms = panels.map(() => 1),
     frames = panels.map((p) => p.querySelector(".art-frame"));
+  // Keep the complete island inside its stage, including when zoomed or rotated.
+  let zoomLimits = [];
+  function measureZoomLimits() {
+    zoomLimits = frames.map((f) => {
+      const stage = f.parentElement;
+      return Math.max(
+        1,
+        Math.min(
+          1.7,
+          (stage.clientWidth - 48) / Math.max(1, f.offsetWidth),
+          (stage.clientHeight - 48) / Math.max(1, f.offsetHeight),
+        ),
+      );
+    });
+    zooms.forEach((value, i) => {
+      zooms[i] = clamp(value, 0.75, zoomLimits[i]);
+    });
+    zoom = Math.min(zoom, zoomLimits[active]);
+  }
+  measureZoomLimits();
   // Crop coordinates within the unchanged 1448 × 1086 debris atlas.
   const boxes = [
     [225, 828, 62, 69],
@@ -116,8 +136,16 @@
         (innerWidth > 950 ? Math.round(64 * z) : Math.round(94 * z)) + "vw";
       if (art.sizes !== size) art.sizes = size;
       set(f, "--zoom", z);
-      set(f, "--camera-x", `${px * (z > 1 ? (z - 1) * -75 : 4) * motion}px`);
-      set(f, "--camera-y", `${py * (z > 1 ? (z - 1) * -55 : 3) * motion}px`);
+      set(
+        f,
+        "--camera-x",
+        `${clamp(px * (z > 1 ? (z - 1) * -75 : 4), -10, 10) * motion}px`,
+      );
+      set(
+        f,
+        "--camera-y",
+        `${clamp(py * (z > 1 ? (z - 1) * -55 : 3), -10, 10) * motion}px`,
+      );
       set(f, "--ix", `${px * 5 * motion}px`);
       set(f, "--iy", `${(py * 3 + Math.sin(time * 0.6 + k) * 3) * motion}px`);
       rocks[k].forEach((r) => {
@@ -159,7 +187,7 @@
     zoomTimer;
   // Every zoom input shares the same bounds and readout.
   function setZoom(value) {
-    zooms[active] = clamp(value, 0.75, 1.7);
+    zooms[active] = clamp(value, 0.75, zoomLimits[active]);
     page.classList.add("is-zooming", "explored");
     document.querySelector(".zoom-readout").textContent =
       Math.round(zooms[active] * 100) + "%";
@@ -299,6 +327,7 @@
     }
   });
   window.addEventListener("resize", () => {
+    measureZoomLimits();
     track.scrollTo({ left: active * track.clientWidth, behavior: "instant" });
     updateActive();
   });
