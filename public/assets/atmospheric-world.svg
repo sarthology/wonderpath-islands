@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 1100" fill="none" preserveAspectRatio="xMidYMid slice">
+ <defs>
+  <linearGradient id="cliff" x2=".7" y2="1"><stop stop-color="#cb9a9e"/><stop offset="1" stop-color="#9b8dac"/></linearGradient>
+  <linearGradient id="land" x2="1" y2="1"><stop stop-color="#f4d0b9"/><stop offset="1" stop-color="#c3b9c2"/></linearGradient>
+  <linearGradient id="haze" x2="0" y2="1"><stop stop-color="#fff1d9" stop-opacity="0"/><stop offset="1" stop-color="#fff1e2" stop-opacity=".9"/></linearGradient>
+  <radialGradient id="sun"><stop stop-color="#fff9df"/><stop offset=".4" stop-color="#ffecc6" stop-opacity=".7"/><stop offset="1" stop-color="#ffeac9" stop-opacity="0"/></radialGradient>
+  <filter id="soft"><feGaussianBlur stdDeviation="3"/></filter>
+ </defs>
+ <ellipse cx="270" cy="350" rx="620" ry="510" fill="url(#sun)"/>
+ <!-- Faceted mesas at different depths, softened by sunset haze. -->
+ <g opacity=".24" filter="url(#soft)">
+  <path d="M-160 680 10 540 128 570 205 450 278 488 348 388 430 449 505 420 625 578 580 675 355 771 80 758Z" fill="url(#land)"/>
+  <path d="m-160 680 240 78 275 13 225-96-92 234-150 115-169-130-156-46Z" fill="url(#cliff)"/>
+  <path d="m205 450 73 38 70-100-39 210Z" fill="#f9dcca"/>
+  <path d="m348 388 82 61 75-29-48 182-148-4Z" fill="#c7a4ad"/>
+  <path d="m80 758 275 13-186 123Z" fill="#e9b5ad"/>
+  <path d="m355 771 133-96-150 349Z" fill="#b799b1"/>
+  <path d="m105 539 37-62 36 59v76h-73Z" fill="#d0a5a4"/>
+  <path d="m138 477 5-41 6 41Z" fill="#ba929f"/>
+  <path d="M1220 610 1320 535 1400 560 1490 400 1545 444 1635 350 1740 480 1910 570 1800 697 1480 734Z" fill="url(#land)"/>
+  <path d="m1220 610 260 124 320-37 110-127-115 294-173 147-198-157Z" fill="url(#cliff)"/>
+  <path d="m1490 400 55 44 90-94-48 257Z" fill="#f0d4c4"/>
+  <path d="m1635 350 105 130-153 127Z" fill="#b7b1c4"/>
+  <path d="m1480 734 107-127 35 404Z" fill="#a7a3bf"/>
+ </g>
+ <g opacity=".28">
+  <path d="m85 350 45-18 42 10 18 22-54 20Z" fill="#e9bba9"/>
+  <path d="m85 350 51 34 54-20-47 78Z" fill="#c9a1a7"/>
+  <path d="m1110 220 42-15 47 24-37 18Z" fill="#f2d5bb"/>
+  <path d="m1110 220 52 27 37-18-31 54Z" fill="#bca7b9"/>
+  <path d="m1500 850 70-22 67 36-72 28Z" fill="#ead2c1"/>
+  <path d="m1500 850 65 42 72-28-62 106Z" fill="#b39aad"/>
+ </g>
+ <g fill="#fff7e6" opacity=".38">
+  <path d="M625 205c-26 0-32-26-14-38 1-29 39-38 52-15 25-15 49 4 43 24 35-7 45 28 17 34Z"/>
+  <path d="M1300 365c-31 3-36-22-17-32 0-24 32-31 43-13 21-12 43 1 39 18 28-5 38 24 13 28Z"/>
+ </g>
+ <path d="M0 810c340-65 440 65 800 7s620-35 1000-5v288H0Z" fill="url(#haze)"/>
+</svg>
