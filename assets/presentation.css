@@ -463,3 +463,29 @@
   display: block;
   padding: 0;
 }
+
+/* Fade copy out before hiding it; reversing zoom fades it back in. */
+.copy,
+.top-label {
+  opacity: 1;
+  visibility: visible;
+  transition:
+    opacity 420ms ease,
+    visibility 0s;
+}
+.panel.is-close .copy,
+.page.has-zoom .top-label {
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 360ms ease,
+    visibility 0s 360ms;
+}
+@media (prefers-reduced-motion: reduce) {
+  .copy,
+  .top-label,
+  .panel.is-close .copy,
+  .page.has-zoom .top-label {
+    transition: none;
+  }
+}
