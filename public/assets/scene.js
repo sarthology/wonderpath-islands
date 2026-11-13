@@ -18,6 +18,7 @@
     frames = panels.map((p) => p.querySelector(".art-frame"));
   const MAX_ZOOM = 3.2;
   const pans = panels.map(() => ({ x: 0, y: 0 }));
+  const cameras = panels.map(() => ({ x: 0, y: 0 }));
   const note = document.querySelector(".gesture-note");
   const reset = document.createElement("button");
   reset.className = "reset-camera";
@@ -27,11 +28,18 @@
     setZoom(1);
   });
   page.append(reset);
+  const layoutAnimations = new WeakMap();
   function updateCameraUI() {
     const close = zooms[active] > 1.3;
     page.classList.toggle("has-zoom", close);
     panels.forEach((panel, i) => {
       const close = zooms[i] > 1.3;
+      const changed = close !== panel.classList.contains("is-close");
+      const layers = changed
+        ? [frames[i], ...panel.querySelectorAll(".foreground-cloud")]
+        : [];
+      const before = layers.map((layer) => layer.getBoundingClientRect());
+      layers.forEach((layer) => layoutAnimations.get(layer)?.cancel());
       if (close && !panel.classList.contains("is-close")) {
         frames[i].style.setProperty(
           "--overview-width",
@@ -40,6 +48,24 @@
       }
       panel.classList.toggle("is-close", close);
       panel.querySelector(".copy").setAttribute("aria-hidden", String(close));
+      // Animate layout displacement separately from the camera transform so panning stays live.
+      if (changed && !reduced)
+        layers.forEach((layer, index) => {
+          const after = layer.getBoundingClientRect();
+          const old = before[index];
+          if (!after.width || !after.height) return;
+          const animation = layer.animate(
+            [
+              {
+                translate: `${old.x + old.width / 2 - after.x - after.width / 2}px ${old.y + old.height / 2 - after.y - after.height / 2}px`,
+                scale: `${old.width / after.width} ${old.height / after.height}`,
+              },
+              { translate: "0px 0px", scale: "1 1" },
+            ],
+            { duration: 520, easing: "cubic-bezier(.22, 1, .36, 1)" },
+          );
+          layoutAnimations.set(layer, animation);
+        });
     });
     const touch = matchMedia("(pointer:coarse)").matches || innerWidth <= 700;
     note.textContent = close
@@ -182,12 +208,17 @@
         (stage.clientWidth / 2 - f.offsetLeft - f.offsetWidth / 2) * recenter;
       const centerY =
         (stage.clientHeight / 2 - f.offsetTop - f.offsetHeight / 2) * recenter;
-      const cameraX =
+      let cameraX =
         centerX +
         clamp(pans[k].x - px * overflowX * 2 * motion, -overflowX, overflowX);
-      const cameraY =
+      let cameraY =
         centerY +
         clamp(pans[k].y - py * overflowY * 2 * motion, -overflowY, overflowY);
+      const blend = reduced ? 1 : 1 - Math.exp(-dt / 85);
+      cameras[k].x += (cameraX - cameras[k].x) * blend;
+      cameras[k].y += (cameraY - cameras[k].y) * blend;
+      cameraX = cameras[k].x;
+      cameraY = cameras[k].y;
       set(f, "--camera-x", `${cameraX}px`);
       set(f, "--camera-y", `${cameraY}px`);
       foreground[k].forEach((cloud, i) => {
@@ -429,6 +460,11 @@
   });
   motionPreference.addEventListener("change", (e) => {
     reduced = e.matches;
+    if (reduced) {
+      [...frames, ...foreground.flat()].forEach((layer) =>
+        layoutAnimations.get(layer)?.cancel(),
+      );
+    }
     start();
   });
   updateActive();

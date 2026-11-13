@@ -67,3 +67,5 @@ The generated fantasy sky fills the viewport. Three atmospheric clouds and two f
 New assets: `public/assets/fantasy-sky.png` and `public/assets/foreground-cloud.png`. Generated with the built-in imagegen tool; the foreground cloud retains transparency. Generation prompts are in `ASSET-PROMPTS.md`. Approved island artwork remains unchanged.
 
 Clouds respond to camera zoom at different depth factors: distant sky expands slightly, atmospheric clouds expand moderately, and foreground clouds expand and shift most strongly. Zooming out reverses the effect.
+
+The overview copy fades out over 360 ms and returns over 420 ms. Artwork and foreground clouds ease between overview and full-page positions over 520 ms; camera transforms remain independent so mouse panning stays live. Reduced-motion mode skips these transitions.
