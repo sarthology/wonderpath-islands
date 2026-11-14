@@ -10,7 +10,19 @@ Plain HTML, CSS, and JavaScript. No package installation, framework, or build st
 python3 -m http.server 3000 --directory public
 ```
 
-Open http://localhost:3000.
+Open http://localhost:3000 for the original horizontal experience.
+
+Open http://localhost:3000/vertical.html for the vertical journey: all 22 islands
+are stacked one below another. Scroll or swipe up/down to explore; clouds,
+rocks, and island parallax animate in both directions. The on-screen arrows
+navigate between islands. Use the zoom controls to inspect each island and
+Reset view to return to its overview. Zoom is remembered per island.
+
+With the scene focused, Up/Down or Page Up/Page Down navigate, Home/End jump
+to the first/last island, and Plus/Minus/0 control zoom. Reduced-motion settings
+remove ambient and scroll-driven motion. The Original view link returns to the
+root page. This separate page uses `assets/vertical.css` and `assets/vertical.js`;
+the original page and its assets are unchanged.
 
 ## Files
 
@@ -73,3 +85,42 @@ The overview copy fades out over 360 ms and returns over 420 ms. Artwork and for
 At overview zoom, pointer movement anywhere across the page moves and subtly tilts the complete island. Clouds and rocks retain separate depth motion. This overview effect fades into the existing close-up pan as zoom increases and is disabled by reduced-motion preferences.
 
 In close-up, one-finger touch or pen dragging pans the image rather than changing islands or zooming. Overview swipes still navigate and zoom. The reset control uses a forest-green and gold pill, an illustrated return icon, a desktop shortcut hint, and a 52px touch target.
+
+## Approved island comparisons
+
+Production comparison: https://sarthology.github.io/wonderpath-islands/vertical.html
+
+Thirteen approved redesigns are available alongside their originals. The remaining
+nine sectors retain their original artwork.
+
+The vertical page compares each approved redesign (right) with its original
+(left), in equal-size artwork areas. All 22 sectors keep their original order.
+
+| Sector | Comparison |
+| --- | --- |
+| 01 — Space Economy | [Open](http://localhost:3000/vertical.html) |
+| 04 — Government & Public Services | [Open](http://localhost:3000/vertical.html#government-public-services) |
+| 09 — Financial Services | [Open](http://localhost:3000/vertical.html#financial-services) |
+| 10 — Technology | [Open](http://localhost:3000/vertical.html#technology) |
+| 12 — Education | [Open](http://localhost:3000/vertical.html#education) |
+| 13 — Manufacturing & Industrial | [Open](http://localhost:3000/vertical.html#manufacturing-industrial) |
+| 14 — Healthcare & Life Sciences | [Open](http://localhost:3000/vertical.html#healthcare) |
+| 15 — Consumer, Retail & Commerce | [Open](http://localhost:3000/vertical.html#consumer-retail-commerce) |
+| 18 — Agriculture, Food & Natural Resources | [Open](http://localhost:3000/vertical.html#agriculture) |
+| 19 — Professional & Business Services | [Open](http://localhost:3000/vertical.html#professional-business-services) |
+| 20 — Clean Tech / Energy, Climate & Environment | [Open](http://localhost:3000/vertical.html#energy-climate-environment) |
+| 21 — Nonprofit, Social Impact & Philanthropy | [Open](http://localhost:3000/vertical.html#nonprofit-social-impact-philanthropy) |
+| 22 — Media, Entertainment & Creative | [Open](http://localhost:3000/vertical.html#media-entertainment-creative) |
+
+Hover or select a version, then scroll up over its artwork to zoom in and scroll
+down to zoom out. On touch screens, select the version and pinch or use the
+zoom controls. Above 130%, the selected version expands while the other version
+and sector copy fade out. Reset view restores the comparison. Each version
+remembers its own zoom. The header, margins, navigation arrows, and keyboard
+remain available to move between the 22 islands. Scrolling down past the minimum
+zoom also resumes vertical navigation. Reduced motion skips transitions.
+
+Approved PNG masters are preserved byte-for-byte in `public/assets/`, with
+alpha-preserving WebP versions for display. Their paths, source images and
+checksums are recorded under `redesigns` in `asset-manifest.json`. Other islands
+keep their existing artwork. The root page and its styles and script are unchanged.

@@ -265,5 +265,278 @@
   ],
   "presentation_version": "depth-and-zoom-v1",
   "navigation": "Horizontal wheel/drag: sectors. Vertical wheel: zoom .75\u20131.7. Touch swipe/pinch supported.",
-  "rocks": "Six independent sprite elements per island, shared 17 KB WebP atlas."
+  "rocks": "Six independent sprite elements per island, shared 17 KB WebP atlas.",
+  "redesigns": [
+    {
+      "sector": "Space Economy",
+      "approval": "Explicit user approval 2026-11-14",
+      "master": "public/assets/space-economy-redesign-approved.png",
+      "display": "public/assets/space-economy-redesign-approved.webp",
+      "small_display": "public/assets/space-economy-redesign-approved-small.webp",
+      "source_file": "exec-031476f4-0dc6-4c00-98f2-e89355759144.png",
+      "dimensions": [
+        1448,
+        1086
+      ],
+      "sha256": "02fdd3a93d1b7ae3708153494a592403c7eb8a57049edd6a6602470a6de36179",
+      "comparison_page": "public/vertical.html",
+      "style_references": [
+        "travel-hospitality-tourism-approved.webp",
+        "future-work-emerging-industries-approved.webp"
+      ]
+    },
+    {
+      "sector": "Government & Public Services",
+      "approval": "Explicit user approval 2026-11-14",
+      "master": "public/assets/government-public-services-redesign-approved.png",
+      "display": "public/assets/government-public-services-redesign-approved.webp",
+      "small_display": "public/assets/government-public-services-redesign-approved-small.webp",
+      "source_file": "exec-8a6065c4-2a1f-4378-819a-f469b3a16c0a.png",
+      "dimensions": [
+        1448,
+        1086
+      ],
+      "sha256": "50ee932759872d14da0c4f0a0704d575c53e46a15c0b1971c67aa1c9a5ca7f6e",
+      "comparison_page": "public/vertical.html#government-public-services",
+      "style_references": [
+        "travel-hospitality-tourism-approved.webp",
+        "future-work-emerging-industries-approved.webp"
+      ]
+    },
+    {
+      "sector": "Financial Services",
+      "approval": "Explicit user approval 2026-11-14, revised terrain concept",
+      "master": "public/assets/financial-services-redesign-approved.png",
+      "display": "public/assets/financial-services-redesign-approved.webp",
+      "small_display": "public/assets/financial-services-redesign-approved-small.webp",
+      "source_file": "exec-62dd6db1-404f-4b97-8542-a672b5ca4611.png",
+      "dimensions": [
+        1448,
+        1086
+      ],
+      "sha256": "58471db7bf666d0ddcbdfc30c09752b8cf89e6b5755b31d7a0acfe150a2ab80b",
+      "comparison_page": "public/vertical.html#financial-services",
+      "style_references": [
+        "travel-hospitality-tourism-approved.webp",
+        "future-work-emerging-industries-approved.webp"
+      ],
+      "design_preference": "This terrain experiment was approved as shown. For future islands, vary terrain subtly and keep the conical rock base."
+    },
+    {
+      "sector": "Technology",
+      "approval": "Explicit user approval 2026-11-14",
+      "master": "public/assets/technology-redesign-approved.png",
+      "display": "public/assets/technology-redesign-approved.webp",
+      "small_display": "public/assets/technology-redesign-approved-small.webp",
+      "source_file": "exec-e27753af-1d42-4a22-a0dc-b6ea09dbd32f.png",
+      "dimensions": [
+        1448,
+        1086
+      ],
+      "sha256": "d3d9dd463defb5921325195ab2f3e873565b1875109a40bd072460541c6773ec",
+      "comparison_page": "public/vertical.html#technology",
+      "style_references": [
+        "travel-hospitality-tourism-approved.webp",
+        "future-work-emerging-industries-approved.webp"
+      ],
+      "terrain": "Subtle shallow terraces and a grassy rear berm; familiar single conical rock base retained."
+    },
+    {
+      "sector": "Education",
+      "approval": "Explicit user approval 2026-11-14, revised roof variety",
+      "master": "public/assets/education-redesign-approved.png",
+      "display": "public/assets/education-redesign-approved.webp",
+      "small_display": "public/assets/education-redesign-approved-small.webp",
+      "source_file": "exec-ec1615d8-e025-4b05-afe7-d1c39d7febd9.png",
+      "dimensions": [
+        1448,
+        1086
+      ],
+      "sha256": "05e2e6058af77e4fc8d8ebef10c87130c451d64bbc42ed557129720c1bda6cdb",
+      "comparison_page": "public/vertical.html#education",
+      "style_references": [
+        "travel-hospitality-tourism-approved.webp",
+        "future-work-emerging-industries-approved.webp"
+      ],
+      "roof_design": "Copper library roof with a narrow skylight; terracotta classroom roofs; planted studio roof; timber bus shelter.",
+      "terrain": "Gentle learning terraces and garden above a single conical rock base."
+    },
+    {
+      "sector": "Manufacturing & Industrial",
+      "approval": "Explicit user approval 2026-11-14, revision restoring industrial skyline and volumetric rock base",
+      "master": "public/assets/manufacturing-industrial-redesign-approved.png",
+      "display": "public/assets/manufacturing-industrial-redesign-approved.webp",
+      "small_display": "public/assets/manufacturing-industrial-redesign-approved-small.webp",
+      "source_file": "exec-c080d3f5-d0b5-4d09-8956-4e3b179a13cc.png",
+      "dimensions": [
+        1448,
+        1086
+      ],
+      "sha256": "fa3cf72572bdf61aa685d82a724bb814161fee73665c726fe90e94e0f3919cfd",
+      "comparison_page": "public/vertical.html#manufacturing-industrial",
+      "style_references": [
+        "manufacturing-industrial-web.webp",
+        "travel-hospitality-tourism-approved.webp",
+        "future-work-emerging-industries-approved.webp"
+      ],
+      "roof_design": "Retain user-liked sawtooth production roof, pitched warehouse roof and flat admin roof with slanted monitor.",
+      "terrain": "Mountain outcrops restored, plus cooling towers and striped chimneys. Single conical rock base has stronger three-dimensional mass, irregular facets and deeper receding-plane shadows."
+    },
+    {
+      "sector": "Healthcare & Life Sciences",
+      "approval": "Explicit user approval 2026-11-14",
+      "master": "public/assets/healthcare-redesign-approved.png",
+      "display": "public/assets/healthcare-redesign-approved.webp",
+      "small_display": "public/assets/healthcare-redesign-approved-small.webp",
+      "source_file": "exec-489201bd-31f8-4ed4-b953-4dcbbc9699ee.png",
+      "dimensions": [
+        1448,
+        1086
+      ],
+      "sha256": "f6b84b9a5ca9793cdfe9071514d16cc4073a9ee4117a8b91dc7d195ae8863336",
+      "comparison_page": "public/vertical.html#healthcare",
+      "style_references": [
+        "healthcare-web.webp",
+        "travel-hospitality-tourism-approved.webp",
+        "future-work-emerging-industries-approved.webp",
+        "manufacturing-industrial-redesign-approved.png"
+      ],
+      "roof_design": "Flat hospital roof with helipad, low metal laboratory roof with clerestory, planted rehabilitation roof with timber shade canopy, small glazed conservatory.",
+      "terrain": "Gentle accessible recovery garden above one solid conical rock mass with irregular facets, deeper receding planes and contact shadows."
+    },
+    {
+      "sector": "Consumer, Retail & Commerce",
+      "approval": "Explicit user approval 2026-11-14, mall blue-glass-roof revision",
+      "master": "public/assets/consumer-retail-commerce-redesign-approved.png",
+      "display": "public/assets/consumer-retail-commerce-redesign-approved.webp",
+      "small_display": "public/assets/consumer-retail-commerce-redesign-approved-small.webp",
+      "source_file": "exec-e88523f0-a9ee-446f-9d1d-c7887d422f5e.png",
+      "dimensions": [
+        1448,
+        1086
+      ],
+      "sha256": "d8a28c434f904d7f27aa5de16399a6ad4fbaca54c5a2d971b6adc7f2ba857528",
+      "comparison_page": "public/vertical.html#consumer-retail-commerce",
+      "style_references": [
+        "consumer-retail-commerce-approved.webp",
+        "travel-hospitality-tourism-approved.webp",
+        "future-work-emerging-industries-approved.webp",
+        "manufacturing-industrial-redesign-approved.png"
+      ],
+      "roof_design": "Blue-glass mall atrium restored per user feedback; slate bookshop roof, planted cafe roof, copper boutique roof, metal market-hall roof and flat parcel-hub roof retained.",
+      "terrain": "Shallow shopping terraces and pedestrian lane above a solid three-dimensional conical rock mass with irregular facets and deep receding planes."
+    },
+    {
+      "sector": "Agriculture, Food & Natural Resources",
+      "approval": "Explicit user approval 2026-11-14",
+      "master": "public/assets/agriculture-redesign-approved.png",
+      "display": "public/assets/agriculture-redesign-approved.webp",
+      "small_display": "public/assets/agriculture-redesign-approved-small.webp",
+      "source_file": "exec-1cabff67-9ea3-464a-bcd7-aa8bab15d30c.png",
+      "dimensions": [
+        1448,
+        1086
+      ],
+      "sha256": "2c614b2e6f67c962be2f7c9f69dc6a9ecde13917e64fb7ea2bf765d4c7e131a7",
+      "comparison_page": "public/vertical.html#agriculture",
+      "style_references": [
+        "agriculture-web.webp",
+        "travel-hospitality-tourism-approved.webp",
+        "future-work-emerging-industries-approved.webp",
+        "manufacturing-industrial-redesign-approved.png"
+      ],
+      "roof_design": "Metal barn and lean-to, tiled farmhouse and functional glass greenhouse.",
+      "terrain": "Productive fields follow gentle contour terraces above a solid three-dimensional conical rock base."
+    },
+    {
+      "sector": "Professional & Business Services",
+      "approval": "Explicit user approval 2026-11-14",
+      "master": "public/assets/professional-business-services-redesign-approved.png",
+      "display": "public/assets/professional-business-services-redesign-approved.webp",
+      "small_display": "public/assets/professional-business-services-redesign-approved-small.webp",
+      "source_file": "exec-d09dd53d-6c42-4686-a7ad-786192161651.png",
+      "dimensions": [
+        1448,
+        1086
+      ],
+      "sha256": "1754ac1fbfa56a71ce3b4871dc34ba99cd3975c7b530b3d234774a1792a127ec",
+      "comparison_page": "public/vertical.html#professional-business-services",
+      "style_references": [
+        "professional-business-services-approved.webp",
+        "travel-hospitality-tourism-approved.webp",
+        "future-work-emerging-industries-approved.webp",
+        "manufacturing-industrial-redesign-approved.png"
+      ],
+      "roof_design": "Folded metal consulting roof, planted audit roof, slate recruitment roof and timber meeting pergola.",
+      "terrain": "Connected shallow client terraces and a low rocky shoulder above one solid faceted conical rock base."
+    },
+    {
+      "sector": "Energy, Climate & Environment",
+      "concept_name": "Clean Tech",
+      "approval": "Explicit user approval 2026-11-14",
+      "master": "public/assets/energy-climate-environment-redesign-approved.png",
+      "display": "public/assets/energy-climate-environment-redesign-approved.webp",
+      "small_display": "public/assets/energy-climate-environment-redesign-approved-small.webp",
+      "source_file": "exec-b851ff62-75d5-4568-9f6f-d63b363eb18b.png",
+      "dimensions": [
+        1448,
+        1086
+      ],
+      "sha256": "d203ac901645cc4c71a39941c082fc55d7d100baf74a482c18085555d2b80e79",
+      "comparison_page": "public/vertical.html#energy-climate-environment",
+      "style_references": [
+        "energy-climate-environment-web.webp",
+        "travel-hospitality-tourism-approved.webp",
+        "future-work-emerging-industries-approved.webp",
+        "manufacturing-industrial-redesign-approved.png"
+      ],
+      "roof_design": "Solar roof/canopy on microgrid control, flat planted hydro utility roof and metal gable on repair/material recovery workshop.",
+      "terrain": "Generation ridge, shallow service terrace and contained hydro/water-management shelf above a deep solid faceted cone."
+    },
+    {
+      "sector": "Nonprofit, Social Impact & Philanthropy",
+      "approval": "Explicit user approval 2026-11-14, NGO/UN recognition revision",
+      "master": "public/assets/nonprofit-social-impact-philanthropy-redesign-approved.png",
+      "display": "public/assets/nonprofit-social-impact-philanthropy-redesign-approved.webp",
+      "small_display": "public/assets/nonprofit-social-impact-philanthropy-redesign-approved-small.webp",
+      "source_file": "exec-cc8b9508-2495-484b-a088-68d5a318e7f2.png",
+      "dimensions": [
+        1448,
+        1086
+      ],
+      "sha256": "4af73b2f01d7f4cb881aac762a6e524ad62319fba9ce378efd28d87a2036edca",
+      "comparison_page": "public/vertical.html#nonprofit-social-impact-philanthropy",
+      "style_references": [
+        "nonprofit-social-impact-philanthropy-approved.webp",
+        "travel-hospitality-tourism-approved.webp",
+        "future-work-emerging-industries-approved.webp",
+        "manufacturing-industrial-redesign-approved.png"
+      ],
+      "recognition": "User-requested prominent blue UN flag, NGO Community Support sign, Relief Aid depot fascia and NGO van lettering.",
+      "roof_design": "Terracotta hall roof, planted kitchen roof, grey metal relief depot gable and low support-wing roof.",
+      "terrain": "Accessible community terraces and garden above a solid three-dimensional conical rock base."
+    },
+    {
+      "sector": "Media, Entertainment & Creative",
+      "approval": "Explicit user approval 2026-11-14, blue-glass experiment revision",
+      "master": "public/assets/media-entertainment-creative-redesign-approved.png",
+      "display": "public/assets/media-entertainment-creative-redesign-approved.webp",
+      "small_display": "public/assets/media-entertainment-creative-redesign-approved-small.webp",
+      "source_file": "exec-a8d92a9f-94c3-4946-b8a2-054147df94be.png",
+      "dimensions": [
+        1448,
+        1086
+      ],
+      "sha256": "304f68ac858de313898b5d38d9ecf8bca373489d54f54d3fb8f8613223fced17",
+      "comparison_page": "public/vertical.html#media-entertainment-creative",
+      "style_references": [
+        "media-entertainment-creative-approved.webp",
+        "travel-hospitality-tourism-approved.webp",
+        "future-work-emerging-industries-approved.webp",
+        "manufacturing-industrial-redesign-approved.png"
+      ],
+      "roof_design": "Copper cinema barrel with selected blue-glass bands, recording-wing planted roof with small glass skylight, grey soundstage roof and timber/fabric live canopy.",
+      "terrain": "Shallow performance terraces and accessible paths above a deep volumetric conical rock base."
+    }
+  ]
 }
