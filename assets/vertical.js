@@ -70,7 +70,7 @@
     zoomReadout.value = `${Math.round(zoom * 100)}%`;
     zoomIn.disabled = zoom >= 3.2; zoomOut.disabled = zoom <= .75;
     reset.disabled = Math.abs(zoom - 1) < .001;
-    const name = scene.view ? `${scene.view.dataset.version} design` : 'island';
+    const name = scene.view ? scene.view.querySelector('.comparison-choice').textContent.trim().toLowerCase() : 'island';
     zoomIn.setAttribute('aria-label', `Zoom in ${name}`);
     zoomOut.setAttribute('aria-label', `Zoom out ${name}`);
     zoomReadout.setAttribute('aria-label', `${name} zoom`);
