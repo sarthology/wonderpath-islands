@@ -286,6 +286,26 @@
       ]
     },
     {
+      "sector": "Future of Work & Emerging Industries",
+      "approval": "Explicit user approval 2026-11-15",
+      "master": "public/assets/future-work-emerging-industries-redesign-approved.png",
+      "display": "public/assets/future-work-emerging-industries-redesign-approved.webp",
+      "small_display": "public/assets/future-work-emerging-industries-redesign-approved-small.webp",
+      "source_file": "exec-82d09022-d5e0-46f5-b9c4-929bb73fc033.png",
+      "dimensions": [
+        1448,
+        1086
+      ],
+      "sha256": "94fffb4b432faea05236810cbf6eec903ac9c5e2e88b3dfd60ea5a0552ec55b8",
+      "comparison_page": "public/vertical.html#future-work-emerging-industries",
+      "style_references": [
+        "future-work-emerging-industries-approved.webp"
+      ],
+      "user_feedback": "Client liked the existing design. Subtly alter the main coworking building structure and add one drone while retaining the other functions and island structure.",
+      "architecture": "Staggered rectangular floor plates, recessed meeting-pod bay and a modest projecting balcony; existing skybridge, VR pavilion, robotics workshop and circular-economy pavilion retained.",
+      "terrain": "Original island terrain and faceted conical base retained."
+    },
+    {
       "sector": "Government & Public Services",
       "approval": "Explicit user approval 2026-11-14",
       "master": "public/assets/government-public-services-redesign-approved.png",
@@ -302,6 +322,68 @@
         "travel-hospitality-tourism-approved.webp",
         "future-work-emerging-industries-approved.webp"
       ]
+    },
+    {
+      "sector": "Construction & Real Estate",
+      "approval": "Explicit user approval 2026-11-15",
+      "master": "public/assets/construction-real-estate-redesign-approved.png",
+      "display": "public/assets/construction-real-estate-redesign-approved.webp",
+      "small_display": "public/assets/construction-real-estate-redesign-approved-small.webp",
+      "source_file": "exec-77e0ead5-8864-4c0a-8bce-96be81e80a99.png",
+      "dimensions": [
+        1416,
+        1111
+      ],
+      "sha256": "6c125bbaa48bca19ebb5c584c8bb9ea06f684c70689e9ad91bc5829db9a758f4",
+      "comparison_page": "public/vertical.html#construction-real-estate",
+      "style_references": [
+        "construction-real-estate-approved.webp",
+        "financial-services-redesign-approved.png",
+        "travel-hospitality-tourism-approved.webp"
+      ],
+      "terrain": "User requested Financial-style asymmetric rocky terraces, multiple development elevations and a deep tapered rock underside.",
+      "roof_design": "Terracotta pitched home, planted flat-roof home, selective blue-glass skylights and an unfinished concrete building frame."
+    },
+    {
+      "sector": "Transportation, Mobility & Logistics",
+      "approval": "Explicit user approval 2026-11-15, revised compact rock base and container colors",
+      "master": "public/assets/transportation-mobility-logistics-redesign-approved.png",
+      "display": "public/assets/transportation-mobility-logistics-redesign-approved.webp",
+      "small_display": "public/assets/transportation-mobility-logistics-redesign-approved-small.webp",
+      "source_file": "exec-71ea9e8f-1686-4528-b664-4282da479616.png",
+      "dimensions": [
+        1389,
+        1132
+      ],
+      "sha256": "08678aa6e418ef9058b4ec034e282bf27c9b879464d754255784e375b470513c",
+      "comparison_page": "public/vertical.html#transportation-mobility-logistics",
+      "style_references": [
+        "transportation-mobility-logistics-approved.webp",
+        "travel-hospitality-tourism-approved.webp",
+        "manufacturing-industrial-redesign-approved.png"
+      ],
+      "terrain": "Low mountain rail shoulder and tunnel, station viaduct, shallow transit terraces and recessed harbor above a compact faceted conical base matched to approved Manufacturing.",
+      "roof_design": "Ribbed teal-glass station canopy, flat airport roof with skylight, solar bus canopy and folded grey logistics roof.",
+      "user_feedback": "Initial rock underside was too shallow; the next cone was too long. Approved revision shortens it to match other approved islands, preserving muted petrol teal, ivory and terracotta containers."
+    },
+    {
+      "sector": "Wellness, Fitness & Sports",
+      "approval": "Explicit user approval 2026-11-15",
+      "master": "public/assets/wellness-fitness-sports-redesign-approved.png",
+      "display": "public/assets/wellness-fitness-sports-redesign-approved.webp",
+      "small_display": "public/assets/wellness-fitness-sports-redesign-approved-small.webp",
+      "source_file": "exec-5788e24c-597d-4f8f-bc19-9aa29926c7d8.png",
+      "dimensions": [
+        1448,
+        1086
+      ],
+      "sha256": "53bbf2ba60c3c287ca435f8a883193759061d32fd59e993f91259e92fd3ad82f",
+      "comparison_page": "public/vertical.html#wellness-fitness-sports",
+      "style_references": [
+        "wellness-fitness-sports-approved.webp"
+      ],
+      "terrain": "Original island structure, terrain and faceted conical rock base retained.",
+      "user_feedback": "Remove only the sprout above the dumbbell emblem and replace the immediately adjacent right sports hall with an office-style wing of the same size; preserve the rest of the illustration."
     },
     {
       "sector": "Financial Services",
@@ -427,17 +509,38 @@
       "terrain": "Shallow shopping terraces and pedestrian lane above a solid three-dimensional conical rock mass with irregular facets and deep receding planes."
     },
     {
-      "sector": "Agriculture, Food & Natural Resources",
-      "approval": "Explicit user approval 2026-11-14",
-      "master": "public/assets/agriculture-redesign-approved.png",
-      "display": "public/assets/agriculture-redesign-approved.webp",
-      "small_display": "public/assets/agriculture-redesign-approved-small.webp",
-      "source_file": "exec-1cabff67-9ea3-464a-bcd7-aa8bab15d30c.png",
+      "sector": "Defense, Security & Public Protection",
+      "approval": "Explicit user approval 2026-11-15",
+      "master": "public/assets/defense-security-public-protection-redesign-approved.png",
+      "display": "public/assets/defense-security-public-protection-redesign-approved.webp",
+      "small_display": "public/assets/defense-security-public-protection-redesign-approved-small.webp",
+      "source_file": "exec-9f0fb91d-dbd4-49b3-9df9-d7f94807c92e.png",
       "dimensions": [
         1448,
         1086
       ],
-      "sha256": "2c614b2e6f67c962be2f7c9f69dc6a9ecde13917e64fb7ea2bf765d4c7e131a7",
+      "sha256": "60a6ab2bbf49940e884bbd9d83635658efbe21568441eafef6075b22c46e66ab",
+      "comparison_page": "public/vertical.html#defense-security-public-protection",
+      "style_references": [
+        "defense-security-public-protection-approved.webp",
+        "travel-hospitality-tourism-approved.webp",
+        "manufacturing-industrial-redesign-approved.png"
+      ],
+      "terrain": "Shallow pine-covered radar ridge and connected operational terraces above a compact faceted cone.",
+      "user_feedback": "Pentagon building explicitly rejected. Approved replacement is a stepped rectangular command centre with visible control room and distinct cybersecurity, communications and rescue facilities."
+    },
+    {
+      "sector": "Agriculture, Food & Natural Resources",
+      "approval": "Explicit user approval 2026-11-15, autonomous tractor revision",
+      "master": "public/assets/agriculture-autonomous-redesign-approved.png",
+      "display": "public/assets/agriculture-autonomous-redesign-approved.webp",
+      "small_display": "public/assets/agriculture-autonomous-redesign-approved-small.webp",
+      "source_file": "exec-6fbf26d5-0e0f-4cd2-a9cf-7082f11517a7.png",
+      "dimensions": [
+        1448,
+        1086
+      ],
+      "sha256": "6c546e51cfbbff3bc9e05f80fde63beca32d28de54034707a2810ae4edbc4185",
       "comparison_page": "public/vertical.html#agriculture",
       "style_references": [
         "agriculture-web.webp",
@@ -446,7 +549,23 @@
         "manufacturing-industrial-redesign-approved.png"
       ],
       "roof_design": "Metal barn and lean-to, tiled farmhouse and functional glass greenhouse.",
-      "terrain": "Productive fields follow gentle contour terraces above a solid three-dimensional conical rock base."
+      "terrain": "Productive fields follow gentle contour terraces above a solid three-dimensional conical rock base.",
+      "previous_versions": [
+        {
+          "approval": "Explicit user approval 2026-11-14",
+          "master": "public/assets/agriculture-redesign-approved.png",
+          "display": "public/assets/agriculture-redesign-approved.webp",
+          "small_display": "public/assets/agriculture-redesign-approved-small.webp",
+          "source_file": "exec-1cabff67-9ea3-464a-bcd7-aa8bab15d30c.png",
+          "dimensions": [
+            1448,
+            1086
+          ],
+          "sha256": "2c614b2e6f67c962be2f7c9f69dc6a9ecde13917e64fb7ea2bf765d4c7e131a7"
+        }
+      ],
+      "revision_reference": "agriculture-redesign-approved.png",
+      "user_feedback": "Keep everything else; replace the human-driven foreground tractor with an autonomous cabless tractor, retaining orange color, scale and loaded produce trailer."
     },
     {
       "sector": "Professional & Business Services",
@@ -495,16 +614,16 @@
     },
     {
       "sector": "Nonprofit, Social Impact & Philanthropy",
-      "approval": "Explicit user approval 2026-11-14, NGO/UN recognition revision",
-      "master": "public/assets/nonprofit-social-impact-philanthropy-redesign-approved.png",
-      "display": "public/assets/nonprofit-social-impact-philanthropy-redesign-approved.webp",
-      "small_display": "public/assets/nonprofit-social-impact-philanthropy-redesign-approved-small.webp",
-      "source_file": "exec-cc8b9508-2495-484b-a088-68d5a318e7f2.png",
+      "approval": "Explicit user approval 2026-11-15, entire main name board removed",
+      "master": "public/assets/nonprofit-social-impact-philanthropy-no-board-approved.png",
+      "display": "public/assets/nonprofit-social-impact-philanthropy-no-board-approved.webp",
+      "small_display": "public/assets/nonprofit-social-impact-philanthropy-no-board-approved-small.webp",
+      "source_file": "exec-170a5255-4be0-4aee-ba05-30ee65f8720a.png",
       "dimensions": [
         1448,
         1086
       ],
-      "sha256": "4af73b2f01d7f4cb881aac762a6e524ad62319fba9ce378efd28d87a2036edca",
+      "sha256": "385ecd5540235cee2589fe2cbccb7a99b79a5653eca23d9d38b50b674185d017",
       "comparison_page": "public/vertical.html#nonprofit-social-impact-philanthropy",
       "style_references": [
         "nonprofit-social-impact-philanthropy-approved.webp",
@@ -512,9 +631,36 @@
         "future-work-emerging-industries-approved.webp",
         "manufacturing-industrial-redesign-approved.png"
       ],
-      "recognition": "User-requested prominent blue UN flag, NGO Community Support sign, Relief Aid depot fascia and NGO van lettering.",
+      "recognition": "Blue UN flag and depot pennant, Relief Aid fascia and visible community support facilities; main name board and NGO van lettering removed.",
       "roof_design": "Terracotta hall roof, planted kitchen roof, grey metal relief depot gable and low support-wing roof.",
-      "terrain": "Accessible community terraces and garden above a solid three-dimensional conical rock base."
+      "terrain": "Accessible community terraces and garden above a solid three-dimensional conical rock base.",
+      "previous_versions": [
+        {
+          "sector": "Nonprofit, Social Impact & Philanthropy",
+          "approval": "Explicit user approval 2026-11-14, NGO/UN recognition revision",
+          "master": "public/assets/nonprofit-social-impact-philanthropy-redesign-approved.png",
+          "display": "public/assets/nonprofit-social-impact-philanthropy-redesign-approved.webp",
+          "small_display": "public/assets/nonprofit-social-impact-philanthropy-redesign-approved-small.webp",
+          "source_file": "exec-cc8b9508-2495-484b-a088-68d5a318e7f2.png",
+          "dimensions": [
+            1448,
+            1086
+          ],
+          "sha256": "4af73b2f01d7f4cb881aac762a6e524ad62319fba9ce378efd28d87a2036edca",
+          "comparison_page": "public/vertical.html#nonprofit-social-impact-philanthropy",
+          "style_references": [
+            "nonprofit-social-impact-philanthropy-approved.webp",
+            "travel-hospitality-tourism-approved.webp",
+            "future-work-emerging-industries-approved.webp",
+            "manufacturing-industrial-redesign-approved.png"
+          ],
+          "recognition": "User-requested prominent blue UN flag, NGO Community Support sign, Relief Aid depot fascia and NGO van lettering.",
+          "roof_design": "Terracotta hall roof, planted kitchen roof, grey metal relief depot gable and low support-wing roof.",
+          "terrain": "Accessible community terraces and garden above a solid three-dimensional conical rock base."
+        }
+      ],
+      "revision_reference": "nonprofit-social-impact-philanthropy-redesign-approved.png",
+      "user_feedback": "Client rejected NGO lettering and successive main name-board layouts. Approved final revision removes the entire main board, reconstructs open timber rafters and shelving, and removes NGO from the van. UN flags and Relief Aid warehouse sign retained."
     },
     {
       "sector": "Media, Entertainment & Creative",

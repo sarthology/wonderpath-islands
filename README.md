@@ -90,8 +90,8 @@ In close-up, one-finger touch or pen dragging pans the image rather than changin
 
 Production comparison: https://sarthology.github.io/wonderpath-islands/vertical.html
 
-Thirteen approved redesigns are available alongside their originals. The remaining
-nine sectors retain their original artwork.
+Eighteen approved redesigns are available alongside their originals. The remaining
+four sectors retain their original artwork.
 
 The vertical page compares each approved redesign (right) with its original
 (left), in equal-size artwork areas. All 22 sectors keep their original order.
@@ -99,13 +99,18 @@ The vertical page compares each approved redesign (right) with its original
 | Sector | Comparison |
 | --- | --- |
 | 01 — Space Economy | [Open](http://localhost:3000/vertical.html) |
+| 03 — Future of Work & Emerging Industries | [Open](http://localhost:3000/vertical.html#future-work-emerging-industries) |
 | 04 — Government & Public Services | [Open](http://localhost:3000/vertical.html#government-public-services) |
+| 05 — Construction & Real Estate | [Open](http://localhost:3000/vertical.html#construction-real-estate) |
+| 07 — Transportation, Mobility & Logistics | [Open](http://localhost:3000/vertical.html#transportation-mobility-logistics) |
+| 08 — Wellness, Fitness & Sports | [Open](http://localhost:3000/vertical.html#wellness-fitness-sports) |
 | 09 — Financial Services | [Open](http://localhost:3000/vertical.html#financial-services) |
 | 10 — Technology | [Open](http://localhost:3000/vertical.html#technology) |
 | 12 — Education | [Open](http://localhost:3000/vertical.html#education) |
 | 13 — Manufacturing & Industrial | [Open](http://localhost:3000/vertical.html#manufacturing-industrial) |
 | 14 — Healthcare & Life Sciences | [Open](http://localhost:3000/vertical.html#healthcare) |
 | 15 — Consumer, Retail & Commerce | [Open](http://localhost:3000/vertical.html#consumer-retail-commerce) |
+| 17 — Defense, Security & Public Protection | [Open](http://localhost:3000/vertical.html#defense-security-public-protection) |
 | 18 — Agriculture, Food & Natural Resources | [Open](http://localhost:3000/vertical.html#agriculture) |
 | 19 — Professional & Business Services | [Open](http://localhost:3000/vertical.html#professional-business-services) |
 | 20 — Clean Tech / Energy, Climate & Environment | [Open](http://localhost:3000/vertical.html#energy-climate-environment) |

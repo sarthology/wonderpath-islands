@@ -256,3 +256,104 @@ roof experiment adds blue-glass bands between cinema copper ribs and a small
 recording-wing skylight while retaining the grey soundstage roof and timber/
 fabric stage canopy. Keep the solid deep faceted cone. No giant film-reel
 monument, rainbow tree, ornamental stream or bridge.
+
+## Construction & Real Estate — approved 2026-11-15
+
+Approved source: `exec-77e0ead5-8864-4c0a-8bce-96be81e80a99.png`.
+Project master: `public/assets/construction-real-estate-redesign-approved.png`.
+Generated with the built-in imagegen tool, using original Construction for subject,
+approved Financial for the explicitly requested island structure, and Travel for
+art style. PNG preserved byte-for-byte; responsive WebP copies preserve alpha.
+
+Concept: hillside neighborhood being built across three elevations: tower crane
+and concrete frame, excavation and foundations, mixer truck and materials,
+completed apartments, two distinct homes and an open-front architecture studio.
+Terrain: asymmetric copper sandstone ledges, winding access lane and connected
+stairs, retaining walls and deep shadowed rocky underside with tapered bottom.
+Roofs vary by function: terracotta pitched home, planted flat home and selected
+teal skylights. No central statue or generic circular plaza.
+
+## Transportation, Mobility & Logistics — approved 2026-11-15
+
+Approved revision source: `exec-71ea9e8f-1686-4528-b664-4282da479616.png`.
+Project master: `public/assets/transportation-mobility-logistics-redesign-approved.png`.
+Generated with the built-in imagegen tool. Original Transport supplied subject
+context, Travel supplied style and approved Manufacturing supplied rock depth
+and final base proportions. PNG preserved byte-for-byte; WebP copies preserve alpha.
+
+Concept: a connected passenger and freight hub: mountain rail tunnel and station
+viaduct, airport apron and control tower, electric bus/solar charging canopy,
+bicycle dock, cargo warehouse, forklift and delivery truck, dock crane and ship.
+Roof designs follow each transport function. The initial shallow underside was
+revised deeper, then shortened at the user's request to match approved islands.
+The approved version has a compact broad faceted cone with dimensional shadows.
+Shipping containers use muted petrol teal, ivory and terracotta instead of bright
+blue and orange. All harbor water stays within the island; no ornamental waterfall.
+
+## Wellness, Fitness & Sports — approved 2026-11-15
+
+Approved source: `exec-5788e24c-597d-4f8f-bc19-9aa29926c7d8.png`.
+Project master: `public/assets/wellness-fitness-sports-redesign-approved.png`.
+Generated with the built-in imagegen tool as a precise edit of original Wellness.
+PNG preserved byte-for-byte; responsive WebP copies preserve alpha.
+
+User requested two local changes only: remove the green sprout directly above
+the illuminated dumbbell emblem, keeping the dumbbell and brown arched fascia;
+replace the sports hall immediately to its right with an office-style wing of
+the same footprint and height. The replacement has cream framing, teal glazing,
+a flat parapet roof and a visible office interior. The remaining gym, yoga
+pavilion, pool, running track, basketball court, landscaping and island base
+retain the original design.
+
+## Defense, Security & Public Protection — approved 2026-11-15
+
+Approved source: `exec-9f0fb91d-dbd4-49b3-9df9-d7f94807c92e.png`.
+Project master: `public/assets/defense-security-public-protection-redesign-approved.png`.
+Generated with the built-in imagegen tool using original Defence for sector
+context, Travel for style and approved Manufacturing for base proportions.
+PNG preserved byte-for-byte; responsive WebP copies preserve alpha.
+
+The user rejected the Pentagon building. Approved concept replaces it with an
+asymmetrical stepped rectangular command centre with an open operations room,
+a cybersecurity wing with server racks, ridge-top radar and observation tower,
+rescue equipment garage, helicopter hangar and secure entrance. Roofs follow
+function with flat planted terraces, selected teal skylights and grey hangar
+roof. Low rocky terrain and compact broad faceted cone keep approved proportions.
+
+## Agriculture — autonomous tractor revision approved 2026-11-15
+
+Approved source: `exec-6fbf26d5-0e0f-4cd2-a9cf-7082f11517a7.png`.
+Project master: `public/assets/agriculture-autonomous-redesign-approved.png`.
+Generated with the built-in imagegen tool as a precise edit of the approved
+Agriculture redesign. User requested that everything else remain as before.
+The foreground tractor is now cabless and autonomous, with lidar, cameras and
+GNSS antenna, retaining its orange palette, scale, wheels and loaded wooden
+produce trailer. Buildings, crops, orchard, drone, irrigation and terrain retain
+the approved design. PNG preserved byte-for-byte; responsive WebP copies preserve
+alpha. The earlier approved PNG and display assets remain available; their
+provenance is preserved in the manifest's previous_versions record.
+
+## Nonprofit — main name board removed, approved 2026-11-15
+
+Approved source: `exec-170a5255-4be0-4aee-ba05-30ee65f8720a.png`.
+Project master: `public/assets/nonprofit-social-impact-philanthropy-no-board-approved.png`.
+Generated with the built-in imagegen tool through local revisions of the approved
+Nonprofit art. The client rejected NGO lettering, then the main name-board
+layouts, and finally requested removal of the entire board. The approved result
+has open timber rafters and storage beneath the eaves, no main name board, and
+no NGO lettering on the van. UN flags, Relief Aid warehouse sign, community
+kitchen, skills workshop, packing supplies, garden and island base are retained.
+PNG preserved byte-for-byte; responsive WebP copies preserve alpha. Earlier
+approved assets remain available and their provenance is archived in the manifest.
+
+## Future of Work & Emerging Industries — approved 2026-11-15
+
+Approved source: `exec-82d09022-d5e0-46f5-b9c4-929bb73fc033.png`.
+Project master: `public/assets/future-work-emerging-industries-redesign-approved.png`.
+Generated with the built-in imagegen tool as a restrained edit of the approved
+Future of Work illustration. The client liked the existing scene and requested
+a small building-structure change plus a drone. The main coworking building has
+subtly staggered rectangular floors, recessed meeting pods and a projecting
+balcony, with a compact quadcopter near the skybridge. Other workspaces, robotics,
+VR, circular-economy facilities, delivery rover, terrain and base retain their
+existing design. PNG preserved byte-for-byte; responsive WebP copies preserve alpha.
