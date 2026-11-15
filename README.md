@@ -1,4 +1,13 @@
-# WonderPath Islands
+# WonderPath Islands & Design Playground
+
+The root page is now the four-direction design gallery. Open a design and use its **All designs** button to return.
+
+- `designs/bold.html` — Electric Play
+- `designs/open-world.html` — Open World
+- `designs/dreamscape.html` — Dreamscape
+- `designs/graphics-refresh.html` — Original, reimagined
+
+The original horizontal island explorer is preserved at `islands.html`; vertical island comparisons remain at `vertical.html`. See [DESIGN-GALLERY.md](DESIGN-GALLERY.md) for the gallery structure. Historical presentation notes below describe the retained island experiences.
 
 Twenty-two approved floating islands with responsive artwork, parallax clouds and scenery, independently moving rocks, and island navigation.
 
@@ -10,7 +19,7 @@ Plain HTML, CSS, and JavaScript. No package installation, framework, or build st
 python3 -m http.server 3000 --directory public
 ```
 
-Open http://localhost:3000 for the original horizontal experience.
+Open http://localhost:3000 for the design gallery, or http://localhost:3000/islands.html for the original horizontal experience.
 
 Open http://localhost:3000/vertical.html for the vertical journey: all 22 islands
 are stacked one below another. Scroll or swipe up/down to explore; clouds,
@@ -26,7 +35,10 @@ the original page and its assets are unchanged.
 
 ## Files
 
-- `public/index.html`: island content, accessible artwork descriptions, and responsive image sources.
+- `public/index.html`: four-direction design gallery.
+- `public/designs/`: the four chosen landing-page directions.
+- `public/design-assets/`: shared design assets, fonts, previews and return navigation.
+- `public/islands.html`: original island content, accessible artwork descriptions, and responsive image sources.
 - `public/assets/layout.css`: original layout, typography, backgrounds, and breakpoints.
 - `public/assets/scene.css`: layered motion and interaction styling.
 - `public/assets/presentation.css`: final responsive composition and atmospheric background.
