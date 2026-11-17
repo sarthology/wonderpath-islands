@@ -1,5 +1,7 @@
 /* WonderPath Skybound — palette-only experiment. Layout and artwork are shared with Dreamscape. */
 :root {
+  /* Keep the illustrated foreground; use color alone behind it. */
+  --sky-art: none;
   --bg: #FFFBF5;
   --paper: #FFFDF9;
   --ink: #252D48;
