@@ -14,3 +14,11 @@ The rejected warm-ivory concept and rejected logo are excluded. Existing landing
 Embedded images and fonts were extracted into shared static assets. Existing island assets are reused when their bytes match. Preview images are genuine captures of each direction.
 
 The two new graphics were generated with the built-in image-generation tool. Their prompts are retained in GRAPHICS-REFRESH-PROMPTS.md. WebP originals are included among the shared assets.
+
+## Dreamscape color variants
+
+The gallery also links to three palette-only studies, sharing Dreamscape's layout, artwork, and interactions:
+
+- [Electric Orchard](https://sarthology.github.io/wonderpath-islands/designs/electric-orchard.html) — current production theme.
+- [Skybound](https://sarthology.github.io/wonderpath-islands/designs/skybound.html).
+- [Poppy Sky](https://sarthology.github.io/wonderpath-islands/designs/poppy-sky.html).

@@ -141,3 +141,11 @@ Approved PNG masters are preserved byte-for-byte in `public/assets/`, with
 alpha-preserving WebP versions for display. Their paths, source images and
 checksums are recorded under `redesigns` in `asset-manifest.json`. Other islands
 keep their existing artwork. The root page and its styles and script are unchanged.
+
+## Dreamscape color variants
+
+The gallery also links to three palette-only studies, sharing Dreamscape's layout, artwork, and interactions:
+
+- [Electric Orchard](https://sarthology.github.io/wonderpath-islands/designs/electric-orchard.html) — current production theme.
+- [Skybound](https://sarthology.github.io/wonderpath-islands/designs/skybound.html).
+- [Poppy Sky](https://sarthology.github.io/wonderpath-islands/designs/poppy-sky.html).
