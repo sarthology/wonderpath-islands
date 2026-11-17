@@ -22,3 +22,5 @@ The gallery also links to three palette-only studies, sharing Dreamscape's layou
 - [Electric Orchard](https://sarthology.github.io/wonderpath-islands/designs/electric-orchard.html) — current production theme.
 - [Skybound](https://sarthology.github.io/wonderpath-islands/designs/skybound.html).
 - [Poppy Sky](https://sarthology.github.io/wonderpath-islands/designs/poppy-sky.html).
+
+The dedicated three-palette gallery is at `palettes.html`, with genuine page previews and return links from each variant.
