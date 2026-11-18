@@ -578,3 +578,20 @@
     transition: none;
   }
 }
+
+.island-comparison-link {
+  pointer-events: auto;
+  padding: 10px 14px;
+  border: 1px solid #52685e30;
+  border-radius: 24px;
+  background: #fff6e9c9;
+  color: var(--forest);
+  font-size: 11px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.island-comparison-link:hover { background: #fff6e9; }
+.island-comparison-link:focus-visible {
+  outline: 2px solid var(--forest);
+  outline-offset: 3px;
+}

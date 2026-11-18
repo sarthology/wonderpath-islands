@@ -1,15 +1,8 @@
 # WonderPath Islands & Design Playground
 
-The root page is now the four-direction design gallery. Open a design and use its **All designs** button to return.
+The root page is the horizontal explorer for all 24 approved islands. The vertical comparison at `vertical.html` keeps the 22 existing artworks beside their approved upgrades, with Legal, Ethics & Trust and Entrepreneurship as new standalone islands.
 
-- `designs/bold.html` — Electric Play
-- `designs/open-world.html` — Open World
-- `designs/dreamscape.html` — Dreamscape
-- `designs/graphics-refresh.html` — Original, reimagined
-
-The original horizontal island explorer is preserved at `islands.html`; vertical island comparisons remain at `vertical.html`. See [DESIGN-GALLERY.md](DESIGN-GALLERY.md) for the gallery structure. Historical presentation notes below describe the retained island experiences.
-
-Twenty-two approved floating islands with responsive artwork, parallax clouds and scenery, independently moving rocks, and island navigation.
+The original four visual directions are available at `design-gallery.html`. See [DESIGN-GALLERY.md](DESIGN-GALLERY.md) for the gallery structure.
 
 Plain HTML, CSS, and JavaScript. No package installation, framework, or build step.
 
@@ -19,9 +12,9 @@ Plain HTML, CSS, and JavaScript. No package installation, framework, or build st
 python3 -m http.server 3000 --directory public
 ```
 
-Open http://localhost:3000 for the design gallery, or http://localhost:3000/islands.html for the original horizontal experience.
+Open http://localhost:3000 for the horizontal explorer or http://localhost:3000/design-gallery.html for the design gallery. The previous explorer URL at `islands.html` redirects to the root.
 
-Open http://localhost:3000/vertical.html for the vertical journey: all 22 islands
+Open http://localhost:3000/vertical.html for the vertical comparison: all 24 islands
 are stacked one below another. Scroll or swipe up/down to explore; clouds,
 rocks, and island parallax animate in both directions. The on-screen arrows
 navigate between islands. Use the zoom controls to inspect each island and
@@ -29,16 +22,16 @@ Reset view to return to its overview. Zoom is remembered per island.
 
 With the scene focused, Up/Down or Page Up/Page Down navigate, Home/End jump
 to the first/last island, and Plus/Minus/0 control zoom. Reduced-motion settings
-remove ambient and scroll-driven motion. The Original view link returns to the
-root page. This separate page uses `assets/vertical.css` and `assets/vertical.js`;
-the original page and its assets are unchanged.
+remove ambient and scroll-driven motion. The Horizontal explorer link opens the root page. The vertical page uses `assets/vertical.css` and `assets/vertical.js`.
 
 ## Files
 
-- `public/index.html`: four-direction design gallery.
+- `public/index.html`: horizontal explorer with the 24 approved islands.
+- `public/vertical.html`: original-versus-upgraded artwork comparison.
+- `public/design-gallery.html`: four-direction design gallery.
 - `public/designs/`: the four chosen landing-page directions.
 - `public/design-assets/`: shared design assets, fonts, previews and return navigation.
-- `public/islands.html`: original island content, accessible artwork descriptions, and responsive image sources.
+- `public/islands.html`: redirect for the previous explorer URL.
 - `public/assets/layout.css`: original layout, typography, backgrounds, and breakpoints.
 - `public/assets/scene.css`: layered motion and interaction styling.
 - `public/assets/presentation.css`: final responsive composition and atmospheric background.
@@ -98,49 +91,11 @@ At overview zoom, pointer movement anywhere across the page moves and subtly til
 
 In close-up, one-finger touch or pen dragging pans the image rather than changing islands or zooming. Overview swipes still navigate and zoom. The reset control uses a forest-green and gold pill, an illustrated return icon, a desktop shortcut hint, and a 52px touch target.
 
-## Approved island comparisons
+## Approved island artwork
 
-Production comparison: https://sarthology.github.io/wonderpath-islands/vertical.html
+The root uses the approved transparent WebP artwork in `public/assets/islands-approved/`. The upgrade manifest and transparent PNG masters are in [output/sector-manifest.csv](output/sector-manifest.csv) and `output/approved/`.
 
-Eighteen approved redesigns are available alongside their originals. The remaining
-four sectors retain their original artwork.
-
-The vertical page compares each approved redesign (right) with its original
-(left), in equal-size artwork areas. All 22 sectors keep their original order.
-
-| Sector | Comparison |
-| --- | --- |
-| 01 — Space Economy | [Open](http://localhost:3000/vertical.html) |
-| 03 — Future of Work & Emerging Industries | [Open](http://localhost:3000/vertical.html#future-work-emerging-industries) |
-| 04 — Government & Public Services | [Open](http://localhost:3000/vertical.html#government-public-services) |
-| 05 — Construction & Real Estate | [Open](http://localhost:3000/vertical.html#construction-real-estate) |
-| 07 — Transportation, Mobility & Logistics | [Open](http://localhost:3000/vertical.html#transportation-mobility-logistics) |
-| 08 — Wellness, Fitness & Sports | [Open](http://localhost:3000/vertical.html#wellness-fitness-sports) |
-| 09 — Financial Services | [Open](http://localhost:3000/vertical.html#financial-services) |
-| 10 — Technology | [Open](http://localhost:3000/vertical.html#technology) |
-| 12 — Education | [Open](http://localhost:3000/vertical.html#education) |
-| 13 — Manufacturing & Industrial | [Open](http://localhost:3000/vertical.html#manufacturing-industrial) |
-| 14 — Healthcare & Life Sciences | [Open](http://localhost:3000/vertical.html#healthcare) |
-| 15 — Consumer, Retail & Commerce | [Open](http://localhost:3000/vertical.html#consumer-retail-commerce) |
-| 17 — Defense, Security & Public Protection | [Open](http://localhost:3000/vertical.html#defense-security-public-protection) |
-| 18 — Agriculture, Food & Natural Resources | [Open](http://localhost:3000/vertical.html#agriculture) |
-| 19 — Professional & Business Services | [Open](http://localhost:3000/vertical.html#professional-business-services) |
-| 20 — Clean Tech / Energy, Climate & Environment | [Open](http://localhost:3000/vertical.html#energy-climate-environment) |
-| 21 — Nonprofit, Social Impact & Philanthropy | [Open](http://localhost:3000/vertical.html#nonprofit-social-impact-philanthropy) |
-| 22 — Media, Entertainment & Creative | [Open](http://localhost:3000/vertical.html#media-entertainment-creative) |
-
-Hover or select a version, then scroll up over its artwork to zoom in and scroll
-down to zoom out. On touch screens, select the version and pinch or use the
-zoom controls. Above 130%, the selected version expands while the other version
-and sector copy fade out. Reset view restores the comparison. Each version
-remembers its own zoom. The header, margins, navigation arrows, and keyboard
-remain available to move between the 22 islands. Scrolling down past the minimum
-zoom also resumes vertical navigation. Reduced motion skips transitions.
-
-Approved PNG masters are preserved byte-for-byte in `public/assets/`, with
-alpha-preserving WebP versions for display. Their paths, source images and
-checksums are recorded under `redesigns` in `asset-manifest.json`. Other islands
-keep their existing artwork. The root page and its styles and script are unchanged.
+The vertical view shows the earlier artwork on the left and the approved upgrade on the right. Legal, Ethics & Trust and Entrepreneurship are shown individually because they were created for this release. Existing sector links such as `vertical.html#space-economy` are retained.
 
 ## Dreamscape color variants
 
