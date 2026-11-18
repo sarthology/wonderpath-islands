@@ -30,7 +30,7 @@
 .vertical-page .panel:not(.is-near) .cloud img {
   animation-play-state: paused;
 }
-.original-view {
+.horizontal-view {
   pointer-events: auto;
   color: var(--forest);
   text-decoration: none;
@@ -42,7 +42,7 @@
   background: #fff6e991;
   backdrop-filter: blur(12px);
 }
-.original-view span { margin-left: 8px; }
+.horizontal-view span { margin-left: 8px; }
 .vertical-controls,
 .island-navigation {
   position: absolute;
@@ -98,7 +98,7 @@
 }
 @media (hover: hover) {
   .vertical-page button:hover:not(:disabled) { background: #244a3e0d; }
-  .original-view:hover { background: #fff6e9; }
+  .horizontal-view:hover { background: #fff6e9; }
 }
 .vertical-page .gesture-note {
   left: 50%;
@@ -147,7 +147,7 @@
   .vertical-page .copy { transform: none; }
 }
 
-/* Approved redesigns share a panel with their original, at equal scale. */
+/* Give the updated artwork more room in the side-by-side overview. */
 .vertical-page .has-comparison .panel-grid {
   display: block;
   padding: 86px 32px 80px;
@@ -168,6 +168,7 @@
   font-size: 12px;
 }
 .comparison-layout {
+  --comparison-frame-width: min(100%, calc((100dvh - 300px) * 1.33333));
   position: absolute;
   inset: 220px 3vw 82px;
   display: grid;
@@ -183,6 +184,12 @@
   transition: opacity 360ms ease;
 }
 .comparison-view { position: relative; min-width: 0; }
+.comparison-view[data-version="old"] { --comparison-frame-scale: .75; }
+/* These pairs have less padding in the updated artwork. */
+:is([data-sector="financial-services"], [data-sector="technology"], [data-sector="education"])
+  .comparison-view[data-version="old"] { --comparison-frame-scale: .84; }
+[data-sector="transportation-mobility-logistics"]
+  .comparison-view[data-version="old"] { --comparison-frame-scale: .9; }
 .comparison-view .comparison-choice {
   position: absolute;
   z-index: 12;
@@ -214,7 +221,7 @@
   pointer-events: auto;
 }
 .vertical-page .comparison-view .art-frame {
-  width: min(98%, calc((100dvh - 300px) * 1.33333));
+  width: calc(var(--comparison-frame-width) * var(--comparison-frame-scale, 1));
   max-height: none;
   margin: auto;
 }
@@ -247,11 +254,10 @@
   .vertical-page .has-comparison .copy { align-self: auto; }
   .vertical-page .has-comparison .sector-name { font-size: 28px; }
   .vertical-page .has-comparison .description { font-size: 11px; max-width: 340px; }
-  .comparison-layout { inset: 235px 12px 100px; gap: 12px; }
+  .comparison-layout { --comparison-frame-width: 100%; inset: 235px 12px 100px; gap: 12px; }
   .comparison-view .comparison-choice { padding: 9px 11px; font-size: 10px; }
   .comparison-choice span { display: block; margin: 5px 0 0; }
   .vertical-page .comparison-view .art-stage { inset: 55px 0 0; }
-  .vertical-page .comparison-view .art-frame { width: 100%; }
   .has-comparison.is-close .comparison-view.is-selected .comparison-choice { top: 80px; }
   .vertical-page .has-comparison.is-close .comparison-view.is-selected .art-frame {
     width: min(92vw, calc((100dvh - 220px) * 1.33333));
@@ -260,16 +266,14 @@
 @media (max-height: 650px) and (min-width: 701px) {
   .vertical-page .has-comparison .panel-grid { padding-top: 76px; }
   .vertical-page .has-comparison .sector-name { font-size: 28px; }
-  .comparison-layout { inset: 190px 3vw 82px; }
-  .vertical-page .comparison-view .art-frame { width: min(98%, calc((100dvh - 280px) * 1.33333)); }
+  .comparison-layout { --comparison-frame-width: min(100%, calc((100dvh - 280px) * 1.33333)); inset: 190px 3vw 82px; }
 }
 @media (max-height: 500px) and (min-aspect-ratio: 4/3) {
   .vertical-page .has-comparison .panel-grid { padding: 66px 20px 76px; }
   .vertical-page .has-comparison .caption,
   .vertical-page .has-comparison .description { display: none; }
   .vertical-page .has-comparison .sector-name { font-size: 24px; margin: 0; }
-  .comparison-layout { inset: 105px 3vw 76px; }
-  .vertical-page .comparison-view .art-frame { width: min(98%, calc((100dvh - 205px) * 1.33333)); }
+  .comparison-layout { --comparison-frame-width: min(100%, calc((100dvh - 205px) * 1.33333)); inset: 105px 3vw 76px; }
   .has-comparison.is-close .comparison-view.is-selected .comparison-choice { top: 66px; }
 }
 @media (prefers-reduced-motion: reduce) {

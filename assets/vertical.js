@@ -26,7 +26,7 @@
     view: art.closest('.comparison-view'), zoom: 1, renderedZoom: 1,
     foreground: [], rocks: [],
   })));
-  const selected = panels.map((panel, i) => scenes.find(scene => scene.index === i && scene.view?.dataset.version === 'new')
+  const selected = panels.map((panel, i) => scenes.find(scene => scene.index === i && scene.view?.classList.contains('is-selected'))
     || scenes.find(scene => scene.index === i));
   const current = () => selected[active];
   const boxes = [
@@ -34,8 +34,8 @@
     [1007, 919, 34, 32], [861, 970, 72, 70], [507, 991, 48, 46],
   ];
   scenes.forEach((scene, k) => {
-    // Keep legacy decorative rocks off the new illustration: its terrain is different.
-    scene.rocks = scene.view?.dataset.version === 'new' ? [] : boxes.map(([x, y, w, h], j) => {
+    // The approved redesigns and style candidates have their own rock treatment.
+    scene.rocks = scene.panel.dataset.artwork === 'redesign' || scene.view?.dataset.version === 'new' ? [] : boxes.map(([x, y, w, h], j) => {
       const rock = document.createElement('span');
       rock.className = 'debris';
       rock.setAttribute('aria-hidden', 'true');
@@ -76,7 +76,7 @@
     zoomReadout.setAttribute('aria-label', `${name} zoom`);
     note.textContent = scene.view
       ? 'Scroll over either island to zoom · Scroll outside the artwork to explore'
-      : 'Scroll up or down to explore · Use + / − to zoom';
+      : 'Scroll over an island to zoom · Scroll outside the artwork to explore';
   }
   function updateActive() {
     const center = track.scrollTop + track.clientHeight / 2;
@@ -159,17 +159,19 @@
       event.preventDefault(); setZoom(event.key === '0' ? 1 : current().zoom + (event.key === '-' ? -.25 : .25));
     }
   });
-  scenes.filter(scene => scene.view).forEach(scene => {
-    const button = scene.view.querySelector('.comparison-choice');
-    button.addEventListener('click', () => choose(scene));
-    scene.view.addEventListener('pointerenter', () => choose(scene));
-    scene.view.addEventListener('focusin', () => choose(scene));
+  scenes.forEach(scene => {
+    if (scene.view) {
+      scene.view.querySelector('.comparison-choice').addEventListener('click', () => choose(scene));
+      scene.view.addEventListener('pointerenter', () => choose(scene));
+      scene.view.addEventListener('focusin', () => choose(scene));
+    }
     // Vertical scrolling over artwork retains the original camera gesture.
     // The header, margins, and navigation remain available for moving between panels.
     scene.stage.addEventListener('wheel', event => {
       if (event.ctrlKey || scene.index !== active || Math.abs(track.scrollTop - offsets[active]) > 8) return;
       if (Math.abs(event.deltaX) > Math.abs(event.deltaY)) return;
-      choose(scene);
+      if (!scene.view && !scene.art.contains(event.target) && !scene.panel.classList.contains('is-close')) return;
+      if (scene.view) choose(scene);
       if (current() !== scene || !event.deltaY) return;
       if (scene.zoom <= .75 && event.deltaY > 0) return;
       event.preventDefault();
@@ -179,7 +181,7 @@
     let pinch = null;
     scene.stage.addEventListener('touchstart', event => {
       if (event.touches.length !== 2 || scene.index !== active) return;
-      choose(scene);
+      if (scene.view) choose(scene);
       if (current() !== scene) return;
       const [a, b] = event.touches;
       pinch = { distance: Math.hypot(a.clientX - b.clientX, a.clientY - b.clientY), zoom: scene.zoom };

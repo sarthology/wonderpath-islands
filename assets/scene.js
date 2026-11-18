@@ -88,7 +88,7 @@
     [507, 991, 48, 46],
   ];
   const rocks = frames.map((f, k) =>
-    boxes.map(([x, y, w, h], j) => {
+    panels[k].dataset.artwork === "redesign" ? [] : boxes.map(([x, y, w, h], j) => {
       const el = document.createElement("span");
       el.className = "debris";
       el.setAttribute("aria-hidden", "true");
